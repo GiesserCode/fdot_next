@@ -2,16 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-    .section-Center{
-        @apply w-full grid place-items-center
+@layer components {
+    .section-Center {
+        @apply w-full grid place-items-center relative
     }
 
-    .maxW{
+    .center {
+        @apply grid place-items-center
+    }
+
+    .maxW {
         @apply max-w-[2000px]
     }
 
-    .background-gradient{
+    .background-gradient {
         @apply bg-gradient-to-r from-purpleMain to-blueMain
     }
+
+    .grey-background-gradient {
+        @apply bg-gradient-to-b from-lightBG
+    }
+
+    .grafik-css {
+        @apply absolute bg-normalLightBg w-full h-[120px] rounded-xl p-2 border border-lightBG
+    }
+
+    .purple-square {
+        @apply border border-purple-500 w-[10px] h-[10px] absolute bg-white
+    }
+
+    .blue-square {
+        @apply border border-blue-500 w-[10px] h-[10px] absolute bg-white
+    }
+
+    .ball {
+        @apply w-5 h-5 rounded-full m-1
+    }
+
+    .section-horizontally {
+        @apply flex-shrink-0 text-white p-5 max-h-screen h-screen
+    }
+
+    .no-focus {
+        @apply border-0 outline-0 focus:outline-none focus:border-0
+    }
+    .input{
+        @apply bg-transparent text-primary text-6xl whitespace-nowrap placeholder:text-lightBG flex items-center h-[75px]
+    }
+
+    .input-text{
+        @apply text-primary text-6xl text h-[75px] flex items-center whitespace-nowrap
+    }
+
+    .textarea{
+        @apply bg-transparent text-primary text-6xl placeholder:text-lightBG pt-2 focus:bg-normalBG rounded-2xl border border-normalLightBg mr-5
+    }
+
+    .colortitle{
+        @apply text-2xl background-gradient text-transparent bg-clip-text inline-block
+    }
+
+    .box{
+        @apply border border-lightBG bg-normalBG rounded-2xl p-5 m-5 max-w-[500px] text-center
+    }
+
+    .id{
+        @apply absolute top-0 -translate-y-[100px]
+    }
+}
+
+.text {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.text .char {
+    transform: translateY(115px);
+    transition: transform .5s;
+    opacity: 0;
+}
+
+.top, .bottom, .left, .right {
+    opacity: 0;
+}
+
+.appear .char, .appearTitle .char {
+    opacity: 0;
+}
+
+.textScrub .char {
+    transform: translateY(115px);
+    transition: transform .5s;
+    opacity: 0;
+}
+
+.boxScrub{
+    transform: translateY(70px);
+    transition: transform .5s;
+    opacity: 0;
+}
+
+.clip-path-polygon {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.zoomed-out-iframe {
+    width: 125%;
+    height: 125%;
+    transform: scale(0.8);
+    transform-origin: top left;
+}
+
+@keyframes buildUp {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.build-up-animation {
+    stroke-dasharray: 796.0692138671875;
+    stroke-dashoffset: 796.0692138671875;
+    animation: buildUp 2s ease forwards;
 }

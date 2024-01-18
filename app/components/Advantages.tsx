@@ -1,19 +1,20 @@
+'use client'
 import {advantages} from "@/app/components/text";
 import {blackOpsOne} from "@/app/ui/fonts";
 
 const Advantages = () => {
-    return <section className={`section-Center`}>
-        <div className={"flex flex-wrap maxW justify-evenly"}>
-            {advantages.map((advantage: any, index: number) => (
-                <div key={index} className={`w-[500px] h-[180px] mx-[5%] bg-normalBG rounded-2xl p-5 mb-[100px] border border-lightBG`}>
-                    <div className={`mb-5`}>
-                        {advantage.icon}
+    return <section className={`section-Center selection:bg-blue-800`}>
+        <div className={`maxW w-full flex px-10 justify-evenly overflow-hidden py-5 flex-wrap`}>
+            {advantages.map((item: any, index: number) => (
+                <div key={index} className={`w-[300px] shuffeledUp bg-normalBG rounded-2xl border border-lightBG mb-20 mx-2`}>
+                    <div className={`w-full grid place-items-center my-5 mx-auto`}>
+                        <div className={`bg-darkBg rounded-full p-4`}>{item.icon}</div>
                     </div>
-                    <h3 className={`text-3xl ${blackOpsOne.className} antialiased mb-2`}>
-                        {advantage.title}
+                    <h3 className={`w-full text-center text-primary ${blackOpsOne.className} antialiased text-3xl`}>
+                        {item.title}
                     </h3>
-                    <p>
-                        {advantage.description}
+                    <p className={`p-5 text-lg text-center text-secondary`}>
+                        {item.description}
                     </p>
                 </div>
             ))}

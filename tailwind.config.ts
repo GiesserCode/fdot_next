@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type {Config} from 'tailwindcss'
 
 const config: Config = {
   content: [
@@ -14,9 +14,23 @@ const config: Config = {
         blueMain: '#332FFF',
         purpleMain: '#C82CFF',
         darkBg: "#090909",
-        normalBG: "#222222",
+        normalBG: "#111111",
+        normalLightBg: "#222222",
         lightBG: "#555555"
       },
+    },
+    keyframes: {
+      fadeInOut: {
+        '0%, 100%': {
+          opacity: "0",
+        },
+        '50%': {
+          opacity: "1",
+        },
+      },
+    },
+    animation: {
+      'fade-in-out': 'fadeInOut 1s ease-in-out infinite',
     },
   },
   plugins: [],

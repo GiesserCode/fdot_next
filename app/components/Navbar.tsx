@@ -1,6 +1,6 @@
 'use client'
-import { useState, useEffect } from "react";
-import { navbar, dropdown, links} from "@/app/components/text";
+import {useEffect, useState} from "react";
+import {dropdown, links, navbar} from "@/app/components/text";
 import {blackOpsOne} from "@/app/ui/fonts";
 import Link from "next/link";
 
@@ -83,54 +83,16 @@ function Navbar() {
             return (
               <li
                 key={item}
-                className={`max-lg:relative h-full w-52 transition ease-in-out duration-500 grid place-items-center max-lg:w-full`}
+                className={`max-lg:relative h-full min-w-[120px] transition ease-in-out duration-500 grid place-items-center max-lg:w-full mx-2`}
               >
                 <Link
                   href={`#${dropdown[index] === null ? links[index] : ""}`}
                   id={`nav-item-${index}`}
                   onClick={() => openDropdown(index)}
-                  className={`peer no-underline transition ease-in-out duration-500 text-white w-full h-full grid place-items-center z-30 bg-zinc-950 max-lg:h-24 outline-none`}
+                  className={`peer no-underline transition ease-in-out duration-500 text-white w-full h-full grid place-items-center z-30 bg-zinc-950 max-lg:h-24 outline-none hover:bg-normalBG rounded-xl`}
                 >
                   {item}
                 </Link>
-                {dropdown[index] != null && (
-                  <div
-                    className="absolute max-lg:relative left-0 m-0 bg-zinc-900 transition ease-in-out duration-500 w-full lg:rounded-b-lg overflow-hidden lg:-translate-y-full lg:p-2 lg:top-full lg:peer-hover:translate-y-0
-                    lg:hover:-translate-y-0 "
-                    style={{
-                      ...(windowWidth <= 1024
-                        ? {
-                            height:
-                              isDropdownOpen === index
-                                ? calc(index) + "px"
-                                : "0px",
-                            transition: "height 500ms ease-in-out",
-                          }
-                        : {}),
-                    }}
-                  >
-                    <ul
-                      id={`dropdown-${index}`}
-                      className={`w-full
-                    h-min`}
-                    >
-                      {dropdown[index]?.map((items, itemIndex) => (
-                        <li
-                          key={items}
-                          className="relative text-center max-lg:relative max-lg:p-2 max-lg:no-underline"
-                        >
-                          <Link
-                            href={`#${links[index]?.[itemIndex] || ""}`}
-                            className="p-2 w-full no-underline text-white max-lg:relative cursor-pointer"
-                            onClick={toggleMenu}
-                          >
-                            {items}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </li>
             );
           })}
