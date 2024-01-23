@@ -18,11 +18,11 @@ const Pricing = () => {
 
 function PricingTitle() {
     return (
-        <div className="text-center mt-24 flex flex-col items-center">
-            <h2 className={`text-primary ${blackOpsOne.className} text-5xl m-2 max-lg:text-4xl text`}>
+        <div className="text-center flex flex-col items-center">
+            <h2 className={`text-primary ${blackOpsOne.className} text-5xl m-2 max-lg:text-2xl text`}>
                 {pricing.title}
             </h2>
-            <p id={"0.02"} className="text-2xl text-zinc-400 w-9/12 max-lg:text-lg appear">
+            <p id={"0.02"} className="text-2xl text-zinc-400 w-9/12 max-lg:text-base appear">
                 {pricing.description}
             </p>
         </div>
@@ -51,7 +51,7 @@ function SimpleTitle() {
             <h2 className={`text-2xl ${blackOpsOne.className} background-gradient text-transparent bg-clip-text inline-block text`}>
                 {pricing.simple.title}
             </h2>
-            <p id={"0.02"} className="text-zinc-400 text-lg appear">{pricing.simple.description}</p>
+            <p id={"0.02"} className="text-zinc-400 text-lg appear max-lg:text-base">{pricing.simple.description}</p>
         </div>
     );
 }
@@ -91,7 +91,7 @@ function SimplePrice() {
             <h3 className="h-1/3 w-full text-lg text-zinc-400 grid place-items-center text-center max-lg:text-sm max-lg:p-2">
                 {pricing.simple.priceTitle}
             </h3>
-            <h2 className={`h-1/3 w-full ${blackOpsOne.className} text-4xl text-primary grid place-items-center max-lg:text-2xl`}>
+            <h2 className={`h-1/3 w-full ${blackOpsOne.className} text-4xl text-primary grid place-items-center max-lg:text-2xl text-center`}>
                 {pricing.simple.price}
             </h2>
             <button
@@ -122,7 +122,7 @@ function AdvancedTitle() {
     return (
         <div>
             <h2 className={`text-2xl ${blackOpsOne.className}`}>{pricing.advanced.title}</h2>
-            <p id={"0.02"} className="text-zinc-400 text-lg appear">{pricing.advanced.description}</p>
+            <p id={"0.02"} className="text-zinc-400 text-lg appear max-lg:text-base">{pricing.advanced.description}</p>
         </div>
     );
 }
@@ -163,7 +163,7 @@ function AdvancedPrice() {
             <h3 className="h-1/3 w-full text-lg text-zinc-400 grid place-items-center text-center max-lg:text-sm max-lg:p-2">
                 {pricing.advanced.priceTitle}
             </h3>
-            <h2 className={`h-1/3 w-full ${blackOpsOne.className} text-4xl text-primary grid place-items-center max-lg:text-2xl`}>
+            <h2 className={`h-1/3 w-full ${blackOpsOne.className} text-4xl text-primary grid place-items-center max-lg:text-2xl text-center`}>
                 {pricing.advanced.price}
             </h2>
             <button

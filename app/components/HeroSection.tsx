@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import {useState} from "react";
 import {blackOpsOne} from "@/app/ui/fonts";
 
 const HeroSection = () => {
@@ -22,7 +22,7 @@ const HeroSection = () => {
         className={`w-4/5 max-w-screen-2xl h-4/5 flex flex-col justify-center items-center overflow-hidden`}
       >
         <h1 className={`text-9xl text-center z-20 font-second text-primary max-lg:text-6xl ${blackOpsOne.className}`}>
-          Website
+          Webseite
         </h1>
         <div
           className={`text-3xl text-white translate-y-[30%] flex flex-row items-center gap-8 z-30 max-lg:text-xl max-lg:gap-2 max-lg:translate-y-[10%]`}
@@ -31,8 +31,8 @@ const HeroSection = () => {
             className={`w-6 h-2 bg-white mr-2 max-lg:w-3 max-lg:h-1`}
           ></span>
           <div>
-            Your own personalized <br />
-            Website
+            Ihre personalisierte <br />
+            Webseite
           </div>
         </div>
         <h3
@@ -44,7 +44,7 @@ const HeroSection = () => {
             }%) rotate(-12deg)`,
           }}
         >
-          Your
+          Ihre
           <div
             className={`absolute top-1/2 w-8 h-8 bg-zinc-950 rounded-full translate-y-[-50%] -left-4 max-lg:w-3 max-lg:h-3 max-lg:-left-1`}
           ></div>
@@ -61,7 +61,7 @@ const HeroSection = () => {
             }%) rotate(30deg)`,
           }}
         >
-          Simple
+          Einfach
         </div>
         <div
           className={`absolute top-1/2 text-4xl left-1/2 shadow-lg shadow-zinc-900 translate-x-[-10%] translate-y-[160%] bg-neutral-700 w-56 h-28 flex justify-center items-center rotate-[-10deg] z-20
@@ -72,7 +72,7 @@ const HeroSection = () => {
             }%) rotate(-10deg)`,
           }}
         >
-          Quality
+          Qualität
           <div
             className={`w-10 h-10 bg-zinc-950 rounded-full absolute -top-4 -left-4 max-lg:-top-3 max-lg:-left-3 max-lg:w-6 max-lg:h-6`}
           ></div>
@@ -87,7 +87,7 @@ const HeroSection = () => {
           ></div>
         </div>
         <div
-          className={`absolute top-1/2 text-4xl left-1/2 shadow-lg shadow-zinc-900 translate-x-[190%] translate-y-[-20%] bg-neutral-500 rounded-[20px] w-32 h-32 flex justify-center items-center rotate-[10deg] z-20
+          className={`absolute top-1/2 text-4xl left-1/2 shadow-lg shadow-zinc-900 translate-x-[190%] translate-y-[-20%] bg-neutral-500 rounded-[20px] w-40 h-32 flex justify-center items-center rotate-[10deg] z-20
           max-lg:w-16 max-lg:h-16 max-lg:text-xl max-lg:rounded-lg`}
           style={{
             transform: `translate(${position.x * 1.6 + 200}%, ${
@@ -95,7 +95,7 @@ const HeroSection = () => {
             }%) rotate(10deg)`,
           }}
         >
-          Quick
+          Schnell
         </div>
         <div
           className={`absolute top-1/2 left-1/2 shadow-lg border-8 border-zinc-600 shadow-zinc-900 translate-x-[70%] translate-y-[-10%] bg-transparent rounded-[20px] w-20 h-20 flex justify-center items-center rotate-[10deg] z-20

@@ -23,38 +23,38 @@ export const links = [
 export const advantages = [
     {
         icon: <CompassSVG/>,
-        title: "Modern",
-        description: "Ich erstelle ihnen ein auf ihr Unternhemen und ihre Branche angepasstes Design."
+        title: "Personalisiert",
+        description: "Ihre Webseite, gestaltet nach ihren Wünschen."
     },
     {
         icon: <UserSVG/>,
         title: "Handgemacht",
-        description: "Ich programmiere ihre Webseite aus eigener Hand und mache es für kann zukünftige Änderungen einfach vornehmen."
+        description: "Ihre Seite ist mit Liebe zum Deteil gestaltet, um eine einzigartige Online-Erfahrung zu bieten."
     },
     {
         icon: <LightningSVG/>,
         title: "Schnell",
-        description: "Ich kreire ihre seite basierend auf ihren wünschen"
+        description: "Erfahren sie eine schnelle Online-Präsenz."
     },
     {
         icon: <NavigatorSVG/>,
-        title: "Personalisiert",
-        description: "Ich kreire ihre seite basierend auf ihren wünschen"
+        title: "Modern",
+        description: "Ihre digitale Identität, auf dem neusten Stand der Technologie."
     },
 ]
 
 export const ablauf = [
     {
         title: "Besprechung & Planung",
-        description: "Füllen Sie unser online Formular aus und wir melden uns bei Ihnen. Nach einer kurzen telefonischen Besprechung erhalten Sie eine passende Offerte.",
+        description: "Nachdem sie mein Online-Formular ausgefüllt haben, kann ich mich mit ihnen in Verbindung setzen. Nach einer kurzen Besprechung werde ich ihnen ein massgeschneiderstes Angebot unterbreiten.",
     },
     {
-        title: "Projekt Start",
-        description: "Falls Ihnen unser Angebot zusagt, starten wir mit dem Projekt. Sie erhalten innerhalb von zwei Wochen den ersten Designentwurf Ihrer neuen Webseite. Gerne gehen wir auf alle Ihre Änderungswünsche ein.",
+        title: "Startschuss",
+        description: "Wenn Ihnen mein Angebot zusagt, setze ich das Projekt in Gang. Innerhalb von zwei Wochen präsentieren ich Ihnen den ersten Designentwurf Ihrer zukünftigen Webseite. Ich freuen mich darauf, alle Ihre Anpassungswünsche sorgfältig zu berücksichtigen.",
     },
     {
-        title: "Go-Live",
-        description: "Nachdem wir alle Texte erstellt und die Inhalte eingepflegt haben, sind wir bereit, Ihre neue Webseite der Welt zu präsentieren. Nun geht es darum, Ihre Webseite zu bewerben und möglichst viele Besucher zu erreichen.",
+        title: "Weblaunch",
+        description: "Nachdem ich alle Inhalte eingefügt habe, steht die Enthüllung Ihrer neuen Webseite bevor. Jetzt konzentriere ich mich darauf, Ihre Webseite effektiv zu vermarkten und eine breite Besucherschaft zu erreichen.",
     },
 ]
 
@@ -92,7 +92,7 @@ export const pricing = {
     simple: {
         title: "Simple",
         description:
-            "Mit dem Simple angebot erhalten sie eine einfache Webseite für ihr Unternehmen oder ihr Hobby. Mir diesem Angebot erhalten sie eine Webseite mit einem guten Preis/Leistungs verhältnis.",
+            "Mit dem Simple angebot erhalten sie eine einfache Webseite für ihr Unternehmen oder Hobby. Zu diesem Angebot kommt dazu, dass ich ihnen kostenfrei zeige, wie sie in Zukunft zugriff auf die Webseite haben.",
         includedTitle: "Das gehört dazu",
         included: [
             "Bis zu 3 Seiten",
@@ -109,7 +109,7 @@ export const pricing = {
     advanced: {
         title: "Advanced",
         description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, voluptas quod architecto inventore harum accusamus similique cum perferendis magnam, vel ipsam expedita pariatur facilis repellendus quibusdam consequatur ex corrupti repudiandae.",
+            "Mit dem Advanced-Angebot erhalten Sie eine maßgeschneiderte Webseite mit erweiterten Funktionen und einem modernen Design für Ihr Unternehmen oder Hobby. Steigern Sie Ihre Online-Präsenz und bringen Sie Ihr Projekt auf das nächste Level.",
         includedTitle: "Das gehört dazu",
         included: [
             "Animationen",
