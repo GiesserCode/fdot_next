@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555555; /* Set your desired scrollbar color */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #222222; /* Set your desired scrollbar track color */
+}
+
 @layer components {
     .section-Center {
         @apply w-full grid place-items-center relative
@@ -47,7 +60,7 @@
         @apply border-0 outline-0 focus:outline-none focus:border-0
     }
     .input{
-        @apply bg-transparent text-primary text-6xl whitespace-nowrap placeholder:text-lightBG flex items-center h-[75px] max-lg:text-2xl
+        @apply bg-transparent text-primary text-6xl whitespace-nowrap placeholder:text-lightBG flex items-center h-[75px] max-lg:text-2xl bg-normalBG rounded-2xl px-1
     }
 
     .input-text{

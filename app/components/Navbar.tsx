@@ -13,10 +13,6 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const openDropdown = (index: number) => {
-    isDropdownOpen === index ? setisDropdownOpen(-1) : setisDropdownOpen(index);
-  };
-
   const calc = (index: number) => {
     return document.querySelector(`#dropdown-${index}`)?.scrollHeight;
   };
@@ -88,7 +84,7 @@ function Navbar() {
                 <Link
                   href={`#${dropdown[index] === null ? links[index] : ""}`}
                   id={`nav-item-${index}`}
-                  onClick={() => openDropdown(index)}
+                  onClick={() => toggleMenu}
                   className={`peer no-underline transition ease-in-out duration-500 text-white w-full h-full grid place-items-center z-30 bg-zinc-950 max-lg:h-24 outline-none hover:bg-normalBG rounded-xl`}
                 >
                   {item}

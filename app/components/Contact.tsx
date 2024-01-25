@@ -184,7 +184,7 @@ const Contact = () => {
     }, []);
 
     return (
-        <div id={"kontakt"} className="wrapper overflow-x-hidden relative">
+        <div id={"kontakt"} className="wrapper overflow-x-hidden relative selection:bg-lightBG">
             <div className="flex container">
                 <section className="section-horizontally w-screen center flex justify-evenly">
                     <div className={`w-1/2 p-1 flex justify-center max-lg:w-full`}>

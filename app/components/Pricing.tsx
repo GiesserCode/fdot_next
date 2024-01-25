@@ -18,7 +18,7 @@ const Pricing = () => {
 
 function PricingTitle() {
     return (
-        <div className="text-center flex flex-col items-center">
+        <div className="text-center flex flex-col items-center max-lg:w-full">
             <h2 className={`text-primary ${blackOpsOne.className} text-5xl m-2 max-lg:text-2xl text`}>
                 {pricing.title}
             </h2>
@@ -48,7 +48,7 @@ function Simple() {
 function SimpleTitle() {
     return (
         <div>
-            <h2 className={`text-2xl ${blackOpsOne.className} background-gradient text-transparent bg-clip-text inline-block text`}>
+            <h2 className={`text-2xl ${blackOpsOne.className} background-gradient text-transparent bg-clip-text inline-block text max-lg:text-primary`}>
                 {pricing.simple.title}
             </h2>
             <p id={"0.02"} className="text-zinc-400 text-lg appear max-lg:text-base">{pricing.simple.description}</p>
@@ -59,7 +59,7 @@ function SimpleTitle() {
 function SimpleIncluded() {
     return (
         <div>
-            <h3 className={`text-sm ${blackOpsOne.className} background-gradient text-transparent bg-clip-text inline-block text`}>
+            <h3 className={`text-sm ${blackOpsOne.className} background-gradient text-transparent bg-clip-text inline-block text max-lg:text-primary`}>
             {pricing.simple.includedTitle}
             </h3>
             <div className="flex flex-wrap max-lg:text-sm">
@@ -121,7 +121,7 @@ function Advanced() {
 function AdvancedTitle() {
     return (
         <div>
-            <h2 className={`text-2xl ${blackOpsOne.className}`}>{pricing.advanced.title}</h2>
+            <h2 className={`text-2xl ${blackOpsOne.className} antialiased max-lg:text-primary`}>{pricing.advanced.title}</h2>
             <p id={"0.02"} className="text-zinc-400 text-lg appear max-lg:text-base">{pricing.advanced.description}</p>
         </div>
     );
@@ -130,7 +130,7 @@ function AdvancedTitle() {
 function AdvancedIncluded() {
     return (
         <div>
-            <h3 className={`text-sm ${blackOpsOne.className} text-primary text`}>
+            <h3 className={`text-sm ${blackOpsOne.className} antialiased text-primary text max-lg:text-primary`}>
                 {pricing.advanced.includedTitle}
             </h3>
             <div className="flex flex-wrap max-lg:text-sm">
