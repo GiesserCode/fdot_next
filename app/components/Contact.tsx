@@ -1,14 +1,14 @@
 'use client'
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import Link from "next/link";
 import {blackOpsOne} from "@/app/ui/fonts";
 import {LockSVG, MailSVG} from "@/app/ui/SVG";
 import Split from "split-type";
+import {sendContent} from '@/app/actions'
 
-
-const Contact = () => {
+const ContactPage = () => {
 
     useEffect(() => {
         let ctx = gsap.context(() => {
@@ -21,7 +21,7 @@ const Contact = () => {
             textElements.forEach((element) => {
                 //const split = new Split(element, { types: 'lines, words, chars' });
                 // @ts-ignore
-                const split = new Split(element, { types: 'lines, words, chars' });
+                const split = new Split(element, {types: 'lines, words, chars'});
 
                 gsap.to(element.querySelectorAll('.char'), {
                     scrollTrigger: element,
@@ -37,7 +37,7 @@ const Contact = () => {
             appearElements.forEach((element) => {
                 //const split = new Split({ target: element,  types: 'lines, words, chars' });
                 // @ts-ignore
-                const split = new Split(element, { types: 'lines, words, chars' });
+                const split = new Split(element, {types: 'lines, words, chars'});
                 const chars = element.querySelectorAll('.char');
 
                 gsap.to(chars, {
@@ -52,7 +52,7 @@ const Contact = () => {
             appearTitleElements.forEach((element) => {
                 //const split = new Split({ target: element,  types: 'lines, words, chars' });
                 // @ts-ignore
-                const split = new Split(element, { types: 'lines, words, chars' });
+                const split = new Split(element, {types: 'lines, words, chars'});
                 const chars = element.querySelectorAll('.char');
                 const speed = parseInt(element.id)
 
@@ -71,7 +71,7 @@ const Contact = () => {
             const topElements = document.querySelectorAll('.top');
 
             rightElements.forEach((element) => {
-                gsap.fromTo(element, { x: "110%" }, {
+                gsap.fromTo(element, {x: "110%"}, {
                     scrollTrigger: element,
                     x: 0,
                     duration: 1.2,
@@ -79,7 +79,7 @@ const Contact = () => {
                 });
             });
             leftElements.forEach((element) => {
-                gsap.fromTo(element,{x: "-110%" }, {
+                gsap.fromTo(element, {x: "-110%"}, {
                     scrollTrigger: element,
                     x: 0,
                     duration: 2,
@@ -87,7 +87,7 @@ const Contact = () => {
                 })
             })
             bottomElements.forEach((element) => {
-                gsap.fromTo(element,{y: "115px" }, {
+                gsap.fromTo(element, {y: "115px"}, {
                     scrollTrigger: element,
                     y: 0,
                     duration: 0.5,
@@ -95,7 +95,7 @@ const Contact = () => {
                 })
             })
             topElements.forEach((element) => {
-                gsap.fromTo(element,{y: "-115px" }, {
+                gsap.fromTo(element, {y: "-115px"}, {
                     scrollTrigger: element,
                     y: 0,
                     duration: 2,
@@ -106,7 +106,8 @@ const Contact = () => {
                 y: 0,
                 duration: 1,
                 scrollTrigger: ".shuffeledUp",
-                stagger: 0.2,})
+                stagger: 0.2,
+            })
             //ScrollTrigger.defaults({markers: {startColor: "white", endColor: "white"}});
 
             const container = document.querySelector('.container');
@@ -139,7 +140,7 @@ const Contact = () => {
             const textScrubElements = document.querySelectorAll('.textScrub');
             textScrubElements.forEach((element) => {
                 // @ts-ignore
-                const split = new Split(element, { types: 'lines, words, chars' });
+                const split = new Split(element, {types: 'lines, words, chars'});
                 const chars = element.querySelectorAll('.char');
                 console.log(element)
 
@@ -250,38 +251,233 @@ const Contact = () => {
                         </section>
                     </div>
                 </section>
-                <section className="section-horizontally w-min flex items-center">
-                    <form className={`flex gap-5 ${blackOpsOne.className} antialiased`}>
-                        <h2 className={` input-text textScrub`}>Hallo Florian, ich
-                            bin</h2>
-                        {/*<div className={`box-1 w-10 h-10 bg-red-600`}></div>*/}
-                        <div className={`overflow-hidden h-min`}>
-                            <input
-                                type="text"
-                                placeholder="Ihr Name"
-                                className={` input w-[7ch] no-focus boxScrub`}
-                            />
-                        </div>
-                        <h2 className={` input-text textScrub`}>. Du kannst mich
-                            über </h2>
-                        <div className={`overflow-hidden h-min`}>
-                            <input
-                                type="text"
-                                placeholder="Ihr Kontakt"
-                                className={` input w-[9ch] no-focus boxScrub`}
-                            />
-                        </div>
-                        <h2 className={` input-text textScrub`}> erreichen.</h2>
-                        <div className={`overflow-hidden h-min`}>
-                            <textarea placeholder={"Ihre Nachricht"} rows={4}
-                                      className={` textarea no-focus boxScrub`}/>
-                        </div>
-                        <button className={`bg-normalLightBg lg:hover:bg-lightBG w-[300px] center rounded-2xl text-6xl h-[70px] transition duration-500 ease-in-out max-lg:text-2xl max-lg:w-min max-lg:h-min max-lg:p-2`}>Senden</button>
-                    </form>
-                </section>
+                <Form/>
+                <LgForm/>
             </div>
         </div>
     );
 };
 
-export default Contact;
+/*function Form() {
+    const initValues = {name: "", contact: "", message: ""}
+    const initState = {values: initValues}
+    const [state, setState] = useState(initState)
+    const [touched, setTouched] = useState({
+        message: false,
+        contact: false,
+        name: false
+    })
+
+    // @ts-ignore
+    const {values, isLoading} = state
+
+    const onBlur = ({target}: any) => setTouched((prev) => ({
+        ...prev,
+        [target.name]:true
+    }))
+
+    const handleChange = ({target}: any) => {
+        setState((prev) => ({
+            ...prev,
+                values: {
+                ...prev.values,
+                    [target.name]: target.value,
+            }
+        }))
+    }
+
+    const onSubmit = async () => {
+        setState((prev) => ({
+            ...prev,
+            isLoading:true
+        }))
+        await sendContactForm(state.values)
+    }
+
+    return <form className={`gap-5 ${blackOpsOne.className} antialiased`}>
+        <FormControl isRequired className={`overflow-hidden h-min`} isInvalid={!values.name && touched.name}>
+            <Input name={"name"}
+                   type="text"
+                   placeholder="Ihr Name"
+                   className={` input w-[7ch] no-focus boxScrub`}
+                   errorBorderColor={"red.300"}
+                   value={values.name}
+                   onChange={handleChange}
+                   onBlur={onBlur}
+            />
+            <FormErrorMessage>Required</FormErrorMessage>
+        </FormControl>
+        <FormControl isRequired className={`overflow-hidden h-min`} isInvalid={!values.contact && touched.contact}>
+            <Input name={"contact"}
+                   type="text"
+                   placeholder="Ihr Kontakt"
+                   className={` input w-[9ch] no-focus boxScrub`}
+                   errorBorderColor={"red.300"}
+                   value={values.contact}
+                   onChange={handleChange}
+                   onBlur={onBlur}
+            />
+            <FormErrorMessage>Required</FormErrorMessage>
+        </FormControl>
+        <FormControl isRequired className={`overflow-hidden h-min`} isInvalid={!values.message && touched.message}>
+                            <Textarea placeholder={"Ihre Nachricht"} rows={4} name={"message"}
+                                      className={` textarea no-focus boxScrub`}
+                                      errorBorderColor={"red.300"}
+                                      value={values.message}
+                                      onChange={handleChange}
+                                      onBlur={onBlur}
+                            />
+            <FormErrorMessage>Required</FormErrorMessage>
+        </FormControl>
+        <Button disabled={!values.name || !values.contact ||!values.message} onClick={onSubmit} isLoading={isLoading}
+            className={`bg-normalLightBg lg:hover:bg-lightBG w-[300px] center rounded-2xl text-6xl h-[70px] transition duration-500 ease-in-out max-lg:text-2xl max-lg:w-min max-lg:h-min max-lg:p-2`}>Senden
+        </Button>
+    </form>
+}*/
+
+function Form() {
+
+    const [submitted, setSubmittet] = useState(false)
+    const [filled, setFilled] = useState({name: true, contact: true, message: true})
+    const [filledReal, setFilledReal] = useState({name: false, contact: false, message: false})
+
+    const handleChange = (e: any) => {
+        const { name, value } = e.target;
+        setFilled((prevFilled) => ({ ...prevFilled, [name]: value !== "" }));
+        setFilledReal((prevFilledReal) => ({ ...prevFilledReal, [name]: value !== "" }));
+    };
+
+    const handleSubmit = () => {
+        setSubmittet(true)
+    }
+
+    return <section className="section-horizontally w-min flex items-center max-lg:hidden">
+        <div
+            className={`absolute flex gap-2 text-primary transition duration-500 ease-in-out right-10 bottom-10 rounded-xl text-xl bg-green-600 p-2 ${submitted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}`}>
+            <svg
+                className="h-6 w-5 text-primary"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+            >
+                <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"
+                />
+            </svg>
+            Daten wurden Versendet
+        </div>
+        <div className={`absolute flex gap-2 text-primary transition duration-500 ease-in-out right-10 bottom-10 rounded-xl text-xl bg-red-600 p-2 ${submitted && Object.values(filledReal).some((value) => !value) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}`}>
+            Füllen Sie die Felder aus
+        </div>
+        <form className={`flex gap-5 ${blackOpsOne.className} antialiased`} action={sendContent}
+              onSubmit={handleSubmit}>
+            <h2 className={` input-text textScrub`}>Hallo Florian, ich
+                bin</h2>
+            <div className={`overflow-hidden h-min`}>
+                <input
+                    type="text"
+                    placeholder="Ihr Name" readOnly={submitted} onBlur={(e) => handleChange(e)} name={"name"} autoComplete={"off"}
+                    className={` input w-[7ch] no-focus boxScrub ${filled.name || "border border-red-600 "}`}
+                />
+                <p className={`absolute text-lg text-red-600 w-[200%] ${filled.name ? "hidden" : "visible"}`}>Füllen Sie dieses Feld aus</p>
+            </div>
+            <h2 className={` input-text textScrub`}>. Du kannst mich
+                über </h2>
+            <div className={`overflow-hidden h-min`}>
+                <input
+                    type="text" name={"contact"} autoComplete={"off"}
+                    placeholder="Ihr Kontakt" onBlur={(e) => handleChange(e)} readOnly={submitted}
+                    className={` input w-[9ch] no-focus boxScrub ${filled.contact || "border border-red-600"}`}
+                />
+                <p className={`absolute text-lg text-red-600 w-[200%] ${filled.contact ? "hidden" : "visible"}`}>Füllen Sie dieses Feld aus</p>
+            </div>
+            <h2 className={` input-text textScrub`}> erreichen.</h2>
+            <div className={`overflow-hidden h-min`}>
+                            <textarea placeholder={"Ihre Nachricht"} name={"message"} autoComplete={"off"} rows={4}
+                                      onBlur={(e) => handleChange(e)} readOnly={submitted}
+                                      className={` textarea no-focus boxScrub ${filled.message || "border border-red-600"}`}/>
+                <p className={`absolute text-lg text-red-600 ${filled.message ? "hidden" : "visible"}`}>Füllen Sie dieses Feld aus</p>
+            </div>
+            <input type={"submit"} disabled={submitted || Object.values(filledReal).some((value) => !value)}
+                   className={`bg-normalLightBg lg:hover:bg-lightBG w-[300px] center rounded-2xl text-6xl h-[70px] transition duration-500 ease-in-out max-lg:text-2xl max-lg:w-min max-lg:h-min max-lg:p-2 disabled:text-secondary disabled:bg-normalBG disabled:cursor-no-drop`}
+                   value={submitted ? "Fertig" : "Senden"}></input>
+        </form>
+    </section>
+}
+
+function LgForm() {
+    const [submitted, setSubmittet] = useState(false)
+    const [filled, setFilled] = useState({name: true, contact: true, message: true})
+    const [filledReal, setFilledReal] = useState({name: false, contact: false, message: false})
+
+    const handleChange = (e: any) => {
+        const { name, value } = e.target;
+        setFilled((prevFilled) => ({ ...prevFilled, [name]: value !== "" }));
+        setFilledReal((prevFilledReal) => ({ ...prevFilledReal, [name]: value !== "" }));
+    };
+
+    const handleSubmit = () => {
+        setSubmittet(true)
+    }
+
+    return <section className="section-horizontally w-screen h-screen grid place-items-center lg:hidden">
+        <div
+            className={`absolute flex gap-2 text-primary transition duration-500 ease-in-out right-10 bottom-10 rounded-xl bg-green-600 p-2 ${submitted && Object.values(filledReal).every((value) => value) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}`}>
+            <svg
+                className="h-6 w-5 text-primary"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+            >
+                <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"
+                />
+            </svg>
+            Daten wurden Versendet
+        </div>
+        <div className={`absolute flex gap-2 text-primary transition duration-500 ease-in-out right-10 bottom-10 rounded-xl bg-red-600 p-2 ${submitted && Object.values(filledReal).some((value) => !value) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}`}>
+            Füllen Sie die Felder aus
+        </div>
+        <form className={`flex flex-col justify-center gap-10 ${blackOpsOne.className} antialiased text-base`} action={sendContent}
+              onSubmit={handleSubmit}>
+            <div className={`flex gap-2 flex-wrap`}><h2 className={`py-2`}>Hallo Florian, ich
+                bin</h2>
+                <div className={"relative"}>
+                    <input
+                        type="text"
+                        placeholder={"Ihr Name"} readOnly={submitted} onBlur={(e) => handleChange(e)} name={"name"} autoComplete={"off"}
+                        className={`bg-transparent no-focus w-[13ch] focus:bg-normalBG rounded-xl p-2 ${filled.name || "border border-red-600 "}`}
+                    />
+                    <p className={`absolute text-sm text-red-600 w-[200%] ${filled.name ? "hidden" : "visible"}`}>Füllen Sie dieses Feld aus</p>
+                </div>
+            </div>
+            <div className={`flex gap-2 flex-wrap`}><h2 className={`py-2`}>Du kannst mich
+                über </h2>
+            <div className={"relative"}>
+                <input
+                    type="text" name={"contact"} autoComplete={"off"}
+                    placeholder={"Ihr Kontakt"} readOnly={submitted} onBlur={(e) => handleChange(e)}
+                    className={`bg-transparent no-focus w-[13ch] focus:bg-normalBG rounded-xl p-2 ${filled.contact || "border border-red-600"}`}
+                />
+                <p className={`absolute text-sm text-red-600 w-[200%] ${filled.contact ? "hidden" : "visible"}`}>Füllen Sie dieses Feld aus</p>
+            </div>
+            <h2 className={`py-2`}>erreichen.</h2></div>
+            <div className={"relative"}>
+                            <textarea placeholder={"Ihre Nachricht"} name={"message"} autoComplete={"off"} rows={4}
+                                      readOnly={submitted} onBlur={(e) => handleChange(e)}
+                                      className={`bg-transparent border border-lightBG rounded-xl p-2 w-full no-focus focus:border focus:bg-normalBG ${filled.message || "border border-red-600"}`}/>
+                <p className={`absolute text-sm text-red-600 ${filled.message ? "hidden" : "visible"}`}>Füllen Sie dieses Feld aus</p>
+            </div>
+            <input type={"submit"} disabled={submitted || Object.values(filledReal).some((value) => !value)}
+                   className={`no-focus bg-normalLightBg rounded-xl p-2 hover:bg-lightBG transition duration-500 ease-in-out disabled:text-secondary disabled:bg-normalBG disabled:cursor-no-drop`}
+                   value={submitted ? "Fertig" : "Senden"}></input>
+        </form>
+    </section>
+}
+
+// @ts-ignore
+export default ContactPage;

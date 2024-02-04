@@ -87,7 +87,7 @@ function SimpleIncluded() {
 
 function SimplePrice() {
     return (
-        <div className="w-1/4 bg-zinc-900 rounded-xl border border-zinc-600 m-2 max-lg:w-10/12 right">
+        <div className="w-1/4 bg-zinc-900 rounded-xl border border-zinc-600 m-2 max-lg:w-10/12 right flex flex-col justify-evenly items-center">
             <h3 className="h-1/3 w-full text-lg text-zinc-400 grid place-items-center text-center max-lg:text-sm max-lg:p-2">
                 {pricing.simple.priceTitle}
             </h3>
@@ -159,7 +159,7 @@ function AdvancedIncluded() {
 function AdvancedPrice() {
     return (
         <div
-            className="w-1/4 bg-zinc-900 rounded-xl border border-zinc-600 m-2 max-lg:w-10/12 flex flex-col justify-evenly relative right">
+            className="w-1/4 bg-zinc-900 rounded-xl border border-zinc-600 m-2 max-lg:w-10/12 relative right flex flex-col justify-evenly items-center">
             <h3 className="h-1/3 w-full text-lg text-zinc-400 grid place-items-center text-center max-lg:text-sm max-lg:p-2">
                 {pricing.advanced.priceTitle}
             </h3>

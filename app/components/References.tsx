@@ -1,6 +1,6 @@
 'use client'
 import {blackOpsOne} from "@/app/ui/fonts";
-import {ChangeSizeArrowSVG, ChangeSizeTextSVG, LockSVG} from "@/app/ui/SVG";
+import {ChangeSizeArrowSVG, LockSVG} from "@/app/ui/SVG";
 
 const References = () => {
 
@@ -39,7 +39,7 @@ const References = () => {
                     </p>
                 </div>
                 <div className={`absolute bottom-0 top-[40%] left-0 max-[1250px]:hidden`}>
-                    <ChangeSizeTextSVG />
+                    <p className={`${blackOpsOne.className} antialiased text-4xl max-w-[240px] text-secondary`}>Ändern sie die Grösse</p>
                     <ChangeSizeArrowSVG />
                 </div>
             </div>
