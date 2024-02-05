@@ -112,6 +112,7 @@ const ContactPage = () => {
 
             const container = document.querySelector('.container');
             const sections = gsap.utils.toArray('.section-horizontally');
+            const windowWidth = (window.innerWidth < 1024 ? 800 : 3000)
 
             let scrollTween = gsap.to(sections, {
                 x: () => -(container!.scrollWidth - window.innerWidth),
@@ -119,7 +120,7 @@ const ContactPage = () => {
                 scrollTrigger: {
                     trigger: container,
                     scrub: 1,
-                    end: "+=3000",
+                    end: `+=${windowWidth}`,
                     pin: true,
                 },
             });

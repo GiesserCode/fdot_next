@@ -21,7 +21,7 @@ const References = () => {
                         </div>
                     </nav>
                     <div className={`w-full h-full relative`}>
-                        <iframe src="https://www.petosch.com" className={`w-full h-full zoomed-out-iframe rounded-b-2xl transform scale-80 transform-origin-top-right no-focus`}></iframe>
+                        <iframe src="https://www.petosch.com" title={"petosch.com"} className={`w-full h-full zoomed-out-iframe rounded-b-2xl transform scale-80 transform-origin-top-right no-focus`}></iframe>
                         <button onClick={() => open("https://www.petosch.com")} className={`absolute right-0 bottom-0 cursor-pointer text-2xl rounded-2xl p-2 m-2 text-primary bg-[#d33] font-bold overflow-hidden transition-all duration-500 shadow-lg shadow-zinc-950 lg:hover:bg-primary lg:hover:text-normalBG`}>Besuchen</button>
                     </div>
                 </div>
