@@ -25,8 +25,8 @@ const About = () => {
                         <div className={`absolute -bottom-[25px] section-Center -translate-x-2`}><div className={`w-16 h-[20px] rounded text-xs bg-blue-600 ${onest.className} antialiased grid place-items-center`}>300 x 60</div></div>
                     </div>
                 </div>
-                <p className={`text-2xl text-secondary appear max-lg:text-base w-full`}>
-                    Hallo! Ich bin Florian, ein Student an der Kantonsschule Sargans. Nebenbei Programmiere ich Hobbymässig Webseiten.
+                <p className={`text-xl text-secondary appear max-lg:text-base w-full`}>
+                    Hallo! Ich bin Florian, ein Student an der Kantonsschule Sargans. Die Programmierung von Webseiten ist schon seit einiger Zeit meine Leidenschaft. Nach zahlreichen persönlichen Projekten habe ich mich entschieden, meine Erfahrungen zu teilen, indem ich maßgeschneiderte Webseiten für andere erstelle.
                 </p>
             </div>
             <div className={`w-[40%] right lg:min-w-[400px] bg-darkBg border-2 border-lightBG rounded-2xl relative selection:bg-zinc-600 max-[1250px]:w-full`}>
@@ -43,7 +43,7 @@ const About = () => {
                 </nav>
                 <section className={`flex p-2`}>
                     <div className={`text-end text-secondary max-lg:hidden`}>
-                        {Array.from({ length: 13 }, (_, index) => (
+                        {Array.from({ length: 16 }, (_, index) => (
                             <div key={index} className={`max-lg:text-sm`}>
                                 {index + 1}.
                             </div>
@@ -57,7 +57,7 @@ const About = () => {
                         <div className="pl-16 appearTitle">Florian Giesser</div>
                         <div className="pl-12 text-yellow-500">&lt;/h1&gt;</div>
                         <div className="pl-12 text-yellow-500">&lt;p&gt;</div>
-                        <div className="pl-16 appear">Hallo! Ich bin Florian, ein Student an der Kantonsschule Sargans. Nebenbei Programmiere ich Hobbymässig Webseiten.</div>
+                        <div className="pl-16 appear">Hallo! Ich bin Florian, ein Student an der Kantonsschule Sargans. Die Programmierung von Webseiten ist schon seit einiger Zeit meine Leidenschaft. Nach zahlreichen persönlichen Projekten habe ich mich entschieden, meine Erfahrungen zu teilen, indem ich maßgeschneiderte Webseiten für andere erstelle.</div>
                         <div className="pl-12 text-yellow-500">&lt;/p&gt;</div>
                         <div className="pl-8 text-red-600 text-opacity-90">&lt;/section&gt;</div>
                         <div className="pl-4 text-red-600 text-opacity-90">&lt;/body&gt;</div>

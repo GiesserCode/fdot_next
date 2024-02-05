@@ -178,6 +178,9 @@ const ContactPage = () => {
                         start: 'left 80%', // Adjust start for horizontal position
                         end: 'right 80%', // Adjust end for horizontal position
                         scrub: 0.5,
+                        onEnter: () => {
+                            (element as HTMLInputElement).focus();
+                        },
                     },
                 });
             });

@@ -24,7 +24,7 @@ export const advantages = [
     {
         icon: <CompassSVG/>,
         title: "Personalisiert",
-        description: "Ihre Webseite, gestaltet nach ihren Wünschen."
+        description: "Ihre Webseite, gestaltet nach ihren Wünschen. Lassen Sie uns gemeinsam Ihre Vorstellungen in die Realität umsetzen."
     },
     {
         icon: <UserSVG/>,
@@ -34,27 +34,27 @@ export const advantages = [
     {
         icon: <LightningSVG/>,
         title: "Schnell",
-        description: "Erfahren sie eine schnelle Online-Präsenz."
+        description: "Vergessen Sie lange Wartezeiten und erleben Sie eine schnelle Online-Präsenz."
     },
     {
         icon: <NavigatorSVG/>,
         title: "Modern",
-        description: "Ihre digitale Identität, auf dem neusten Stand der Technologie."
+        description: "Ihre digitale Identität, auf dem neusten Stand der Technologie. Hinterlassen Sie so einen bleibenden Eindruck."
     },
 ]
 
 export const ablauf = [
     {
         title: "Besprechung & Planung",
-        description: "Nachdem sie mein Online-Formular ausgefüllt haben, kann ich mich mit ihnen in Verbindung setzen. Nach einer kurzen Besprechung werde ich ihnen ein massgeschneiderstes Angebot unterbreiten.",
+        description: "Nachdem Sie das Online-Formular ausgefüllt haben, stehe ich gerne für einen persönlichen Austausch zur Verfügung. Nach einer kurzen Besprechung erstelle ich für Sie ein massgeschneidertes Angebot.",
     },
     {
         title: "Startschuss",
-        description: "Wenn Ihnen mein Angebot zusagt, setze ich das Projekt in Gang. Innerhalb von zwei Wochen präsentieren ich Ihnen den ersten Designentwurf Ihrer zukünftigen Webseite. Ich freuen mich darauf, alle Ihre Anpassungswünsche sorgfältig zu berücksichtigen.",
+        description: "Sollten Sie sich für mein Angebot entscheiden, beginne ich umgehend mit dem Projekt. Innerhalb von zwei Wochen präsentiere ich Ihnen den ersten Designentwurf Ihrer zukünftigen Webseite. Es wird mir eine Freude sein, all Ihre Anpassungswünsche sorgfältig zu berücksichtigen.",
     },
     {
         title: "Weblaunch",
-        description: "Nachdem ich alle Inhalte eingefügt habe, steht die Enthüllung Ihrer neuen Webseite bevor. Jetzt konzentriere ich mich darauf, Ihre Webseite effektiv zu vermarkten und eine breite Besucherschaft zu erreichen.",
+        description: "Mit allen eingefügten Inhalten rückt die Enthüllung Ihrer neuen Webseite näher. Mein aktuelles Ziel ist es, Ihre Webseite effektiv zu vermarkten und eine breite Besucherschaft zu erreichen.",
     },
 ]
 
