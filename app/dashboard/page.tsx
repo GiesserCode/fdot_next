@@ -5,6 +5,7 @@ import {createClient} from "@/utils/supabase/server";
 import {redirect} from "next/navigation";
 import {blackOpsOne} from "@/app/ui/fonts";
 import Nachrichten from "@/app/components/dashboard/Nachricht";
+import UserInfo from "@/app/components/dashboard/UserInfo";
 
 const Dashboard = async () => {
 
@@ -31,6 +32,7 @@ const Dashboard = async () => {
             Willkommen {users![0].name}
         </h1>
         <Nachrichten contacts={contacts}/>
+        <UserInfo users={users![0]} />
     </section>
 }
 

@@ -112,7 +112,7 @@ const ContactPage = () => {
 
             const container = document.querySelector('.container');
             const sections = gsap.utils.toArray('.section-horizontally');
-            const windowWidth = (window.innerWidth < 1024 ? window.innerWidth : 3000)
+            const windowWidth = (window.innerWidth < 1024 ? 0 : 3000)
 
             let scrollTween = gsap.to(sections, {
                 x: () => -(container!.scrollWidth - window.innerWidth),
@@ -190,8 +190,8 @@ const ContactPage = () => {
 
     return (
         <div id={"kontakt"} className="wrapper overflow-x-hidden relative selection:bg-lightBG">
-            <div className="flex container">
-                <section className="section-horizontally w-screen center flex justify-evenly">
+            <div className="lg:flex lg:container">
+                <section className="lg:section-horizontally w-screen center flex justify-evenly">
                     <div className={`w-1/2 p-1 flex justify-center max-lg:w-full`}>
                         <div className={`max-w-[600px] flex flex-col gap-5 max-lg:max-w-full`}>
                             <h2 className={`${blackOpsOne.className} antialiased text-primary text-6xl text max-lg:text-4xl`}>
@@ -426,7 +426,7 @@ function LgForm() {
         setSubmittet(true)
     }
 
-    return <section className="section-horizontally w-screen h-screen grid place-items-center lg:hidden">
+    return <section className="w-screen grid place-items-center lg:hidden px-5">
         <div
             className={`absolute flex gap-2 text-primary transition duration-500 ease-in-out right-10 bottom-10 rounded-xl bg-green-600 p-2 ${submitted && Object.values(filledReal).every((value) => value) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}`}>
             <svg
