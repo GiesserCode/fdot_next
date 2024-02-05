@@ -112,7 +112,7 @@ const ContactPage = () => {
 
             const container = document.querySelector('.container');
             const sections = gsap.utils.toArray('.section-horizontally');
-            const windowWidth = (window.innerWidth < 1024 ? 0 : 3000)
+            const windowWidth = (window.innerWidth < 1024 ? window.innerWidth : 3000)
 
             let scrollTween = gsap.to(sections, {
                 x: () => -(container!.scrollWidth - window.innerWidth),
@@ -190,8 +190,8 @@ const ContactPage = () => {
 
     return (
         <div id={"kontakt"} className="wrapper overflow-x-hidden relative selection:bg-lightBG">
-            <div className="lg:flex lg:container">
-                <section className="lg:section-horizontally w-screen center flex justify-evenly">
+            <div className="flex container max-lg:hidden">
+                <section className="section-horizontally w-screen center flex justify-evenly">
                     <div className={`w-1/2 p-1 flex justify-center max-lg:w-full`}>
                         <div className={`max-w-[600px] flex flex-col gap-5 max-lg:max-w-full`}>
                             <h2 className={`${blackOpsOne.className} antialiased text-primary text-6xl text max-lg:text-4xl`}>
@@ -256,7 +256,6 @@ const ContactPage = () => {
                     </div>
                 </section>
                 <Form/>
-                <LgForm/>
             </div>
         </div>
     );
@@ -355,7 +354,7 @@ function Form() {
         setSubmittet(true)
     }
 
-    return <section className="section-horizontally w-min flex items-center max-lg:hidden">
+    return <section className="section-horizontally w-min flex items-center">
         <div
             className={`absolute flex gap-2 text-primary transition duration-500 ease-in-out right-10 bottom-10 rounded-xl text-xl bg-green-600 p-2 ${submitted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}`}>
             <svg
@@ -406,78 +405,6 @@ function Form() {
             </div>
             <input type={"submit"} disabled={submitted || Object.values(filledReal).some((value) => !value)}
                    className={`bg-normalLightBg lg:hover:bg-lightBG w-[300px] center rounded-2xl text-6xl h-[70px] transition duration-500 ease-in-out max-lg:text-2xl max-lg:w-min max-lg:h-min max-lg:p-2 disabled:text-secondary disabled:bg-normalBG disabled:cursor-no-drop`}
-                   value={submitted ? "Fertig" : "Senden"}></input>
-        </form>
-    </section>
-}
-
-function LgForm() {
-    const [submitted, setSubmittet] = useState(false)
-    const [filled, setFilled] = useState({name: true, contact: true, message: true})
-    const [filledReal, setFilledReal] = useState({name: false, contact: false, message: false})
-
-    const handleChange = (e: any) => {
-        const { name, value } = e.target;
-        setFilled((prevFilled) => ({ ...prevFilled, [name]: value !== "" }));
-        setFilledReal((prevFilledReal) => ({ ...prevFilledReal, [name]: value !== "" }));
-    };
-
-    const handleSubmit = () => {
-        setSubmittet(true)
-    }
-
-    return <section className="w-screen grid place-items-center lg:hidden px-5">
-        <div
-            className={`absolute flex gap-2 text-primary transition duration-500 ease-in-out right-10 bottom-10 rounded-xl bg-green-600 p-2 ${submitted && Object.values(filledReal).every((value) => value) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}`}>
-            <svg
-                className="h-6 w-5 text-primary"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-            >
-                <path
-                    fillRule="evenodd"
-                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                    clipRule="evenodd"
-                />
-            </svg>
-            Daten wurden versendet
-        </div>
-        <div className={`absolute flex gap-2 text-primary transition duration-500 ease-in-out right-10 bottom-10 rounded-xl bg-red-600 p-2 ${submitted && Object.values(filledReal).some((value) => !value) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}`}>
-            Füllen Sie die Felder aus
-        </div>
-        <form className={`flex flex-col justify-center gap-10 ${blackOpsOne.className} antialiased text-base`} action={sendContent}
-              onSubmit={handleSubmit}>
-            <div className={`flex gap-2 flex-wrap`}><h2 className={`py-2`}>Hallo Florian, ich
-                bin</h2>
-                <div className={"relative"}>
-                    <input
-                        type="text"
-                        placeholder={"Ihr Name"} readOnly={submitted} onBlur={(e) => handleChange(e)} name={"name"} autoComplete={"off"}
-                        className={`bg-transparent no-focus w-[13ch] focus:bg-normalBG rounded-xl p-2 ${filled.name || "border border-red-600 "}`}
-                    />
-                    <p className={`absolute text-sm text-red-600 w-[200%] ${filled.name ? "hidden" : "visible"}`}>Füllen Sie dieses Feld aus</p>
-                </div>
-            </div>
-            <div className={`flex gap-2 flex-wrap`}><h2 className={`py-2`}>Du kannst mich
-                über </h2>
-            <div className={"relative"}>
-                <input
-                    type="text" name={"contact"} autoComplete={"off"}
-                    placeholder={"Ihr Kontakt"} readOnly={submitted} onBlur={(e) => handleChange(e)}
-                    className={`bg-transparent no-focus w-[13ch] focus:bg-normalBG rounded-xl p-2 ${filled.contact || "border border-red-600"}`}
-                />
-                <p className={`absolute text-sm text-red-600 w-[200%] ${filled.contact ? "hidden" : "visible"}`}>Füllen Sie dieses Feld aus</p>
-            </div>
-            <h2 className={`py-2`}>erreichen.</h2></div>
-            <div className={"relative"}>
-                            <textarea placeholder={"Ihre Nachricht"} name={"message"} autoComplete={"off"} rows={4}
-                                      readOnly={submitted} onBlur={(e) => handleChange(e)}
-                                      className={`bg-transparent border border-lightBG rounded-xl p-2 w-full no-focus focus:border focus:bg-normalBG ${filled.message || "border border-red-600"}`}/>
-                <p className={`absolute text-sm text-red-600 ${filled.message ? "hidden" : "visible"}`}>Füllen Sie dieses Feld aus</p>
-            </div>
-            <input type={"submit"} disabled={submitted || Object.values(filledReal).some((value) => !value)}
-                   className={`no-focus bg-normalLightBg rounded-xl p-2 hover:bg-lightBG transition duration-500 ease-in-out disabled:text-secondary disabled:bg-normalBG disabled:cursor-no-drop`}
                    value={submitted ? "Fertig" : "Senden"}></input>
         </form>
     </section>

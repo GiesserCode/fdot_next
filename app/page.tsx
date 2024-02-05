@@ -14,6 +14,7 @@ import References from "@/app/components/References";
 import Offers from "@/app/components/Offers";
 import Footer from "@/app/components/Footer";
 import Contact from "@/app/components/Contact";
+import LgForm from "@/app/components/MobileContact";
 
 export default function Home() {
     return (
@@ -29,6 +30,7 @@ export default function Home() {
                 <References/>
                 <Pricing/>
                 <Contact/>
+                <LgForm />
                 <Offers/>
                 <Footer/>
             </main>
