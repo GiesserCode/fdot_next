@@ -1,6 +1,7 @@
 'use client'
 import {pricing} from "@/app/components/text";
 import {blackOpsOne} from "@/app/ui/fonts";
+import Link from "next/link";
 
 const Pricing = () => {
     return (
@@ -87,17 +88,17 @@ function SimpleIncluded() {
 
 function SimplePrice() {
     return (
-        <div className="w-1/4 bg-zinc-900 rounded-xl border border-zinc-600 m-2 max-lg:w-10/12 right flex flex-col justify-evenly items-center">
-            <h3 className="h-1/3 w-full text-lg text-secondary grid place-items-center max-lg:hidden">
+        <div className="bg-normalLightBg m-3 rounded-2xl flex flex-col items-center justify-evenly w-1/4 border border-lightBG max-lg:w-10/12 max-lg:gap-2 max-lg:p-2">
+            <h3 className="text-lg text-secondary max-lg:hidden">
                 {pricing.simple.priceTitle}
             </h3>
-            <h2 className={`h-1/3 w-full ${blackOpsOne.className} text-4xl text-primary grid place-items-center max-lg:text-2xl text-center max-lg:my-2`}>
+            <h2 className={`${blackOpsOne.className} antialiased text-4xl max-lg:text-xl`}>
                 {pricing.simple.price}
             </h2>
-            <button
-                className={`m-5 p-2 w-10/12 text-sm ${blackOpsOne.className} text-primary bg-lightBG rounded-xl lg:hover:bg-normalLightBg ease-in-out duration-500 max-lg:my-2`}>
+            <Link href={"#kontakt"}
+                className={`${blackOpsOne.className} antialiased bg-lightBG w-10/12 p-2 rounded-xl text-center max-lg:text-base`}>
                 {pricing.simple.priceButton}
-            </button>
+            </Link>
         </div>
     );
 }
@@ -158,18 +159,17 @@ function AdvancedIncluded() {
 
 function AdvancedPrice() {
     return (
-        <div
-            className="w-1/4 bg-zinc-900 rounded-xl border border-zinc-600 m-2 max-lg:w-10/12 relative right flex flex-col justify-evenly items-center">
-            <h3 className="h-1/3 w-full text-lg text-secondary grid place-items-center max-lg:hidden">
+        <div className="bg-normalLightBg m-3 rounded-2xl flex flex-col items-center justify-evenly w-1/4 border border-lightBG max-lg:w-10/12 max-lg:gap-2 max-lg:p-2">
+            <h3 className="text-lg text-secondary max-lg:hidden">
                 {pricing.advanced.priceTitle}
             </h3>
-            <h2 className={`h-1/3 w-full ${blackOpsOne.className} text-4xl text-primary grid place-items-center max-lg:text-2xl text-center max-lg:my-2`}>
+            <h2 className={`${blackOpsOne.className} antialiased text-4xl max-lg:text-xl`}>
                 {pricing.advanced.price}
             </h2>
-            <button
-                className={`m-5 p-2 w-10/12 text-sm ${blackOpsOne.className} text-primary rounded-xl bg-lightBG lg:hover:bg-normalLightBg ease-in-out duration-500 max-lg:my-2`}>
+            <Link href={"#kontakt"}
+                  className={`${blackOpsOne.className} antialiased bg-lightBG w-10/12 p-2 rounded-xl text-center max-lg:text-base`}>
                 {pricing.advanced.priceButton}
-            </button>
+            </Link>
         </div>
     );
 }

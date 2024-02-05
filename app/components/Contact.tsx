@@ -112,7 +112,7 @@ const ContactPage = () => {
 
             const container = document.querySelector('.container');
             const sections = gsap.utils.toArray('.section-horizontally');
-            const windowWidth = (window.innerWidth < 1024 ? 600 : 3000)
+            const windowWidth = (window.innerWidth < 1024 ? window.innerWidth : 3000)
 
             let scrollTween = gsap.to(sections, {
                 x: () => -(container!.scrollWidth - window.innerWidth),
@@ -198,7 +198,7 @@ const ContactPage = () => {
                                 Lass uns über ihr Projekt sprechen
                             </h2>
                             <p className={`text-2xl text-secondary text max-lg:text-base`}>
-                                Realisieren sie ihre Projekte
+                                Scrollen Sie, um beeindruckende Projekte zu realisieren.
                             </p>
                             <div className={`overflow-hidden py-2 pr-2`}>
                                 <Link href={"mailto:info@fdot.ch"}
@@ -370,7 +370,7 @@ function Form() {
                     clipRule="evenodd"
                 />
             </svg>
-            Daten wurden Versendet
+            Daten wurden versendet
         </div>
         <div className={`absolute flex gap-2 text-primary transition duration-500 ease-in-out right-10 bottom-10 rounded-xl text-xl bg-red-600 p-2 ${submitted && Object.values(filledReal).some((value) => !value) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}`}>
             Füllen Sie die Felder aus
@@ -441,7 +441,7 @@ function LgForm() {
                     clipRule="evenodd"
                 />
             </svg>
-            Daten wurden Versendet
+            Daten wurden versendet
         </div>
         <div className={`absolute flex gap-2 text-primary transition duration-500 ease-in-out right-10 bottom-10 rounded-xl bg-red-600 p-2 ${submitted && Object.values(filledReal).some((value) => !value) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}`}>
             Füllen Sie die Felder aus

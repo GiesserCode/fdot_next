@@ -39,3 +39,43 @@ export async function sendContent(formData: FormData){
         }
     }
 }
+
+const sendNotesSchema = z.object({notes: z.string()})
+
+export async function sendNotes(formData: FormData, id: string, prevNotes: string) {
+    const validatedFields = sendNotesSchema.safeParse({
+        notes: formData.get('notes'),
+    });
+
+    if (!validatedFields.success) {
+        return {
+            errors: validatedFields.error.flatten().fieldErrors,
+            message: 'Missing Fields. Failed to Create Wordset.',
+        };
+    }
+
+    const {notes}: any = validatedFields.data;
+
+    const cookieStore = cookies();
+    const supabase = createClient(cookieStore);
+
+    if (notes !== "" && notes !== prevNotes){
+        const {data: contacts, error} = await supabase
+            .from("contacts")
+            .update({notes: notes})
+            .eq("id", id)
+        error && console.log(error)
+    }
+
+    console.log(notes)
+}
+
+export async function setRead(id: string, read: boolean) {
+    const cookieStore = cookies();
+    const supabase = createClient(cookieStore);
+    const {data: contacts, error} = await supabase
+        .from("contacts")
+        .update({read: !read})
+        .eq("id", id)
+    error && console.log(error)
+}
