@@ -35,8 +35,8 @@ const Dashboard = async () => {
         <h1 className={`${blackOpsOne.className} antialiased text-4xl mb-5`}>
             Hallo {users![0].name}
         </h1>
-        <Nachrichten contacts={contacts}/>
         <UserInfo users={users![0]} />
+        <Nachrichten contacts={contacts}/>
     </section>
 }
 

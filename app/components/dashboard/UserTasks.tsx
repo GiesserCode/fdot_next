@@ -14,7 +14,7 @@ function Tasks({users}: any){
     };
 
 
-    return users.tasks && <div className={`w-full flex flex-col gap-5 relative`}>
+    return <div className={`w-full flex flex-col gap-5 relative`}>
         {users.tasks.map((item: any, index: number) => (
             <div key={index} className={`w-full bg-normalBG rounded-xl p-5 text-xl flex`} onClick={() => toggleTextarea(index)}>
                 <div className={`w-full flex`}>

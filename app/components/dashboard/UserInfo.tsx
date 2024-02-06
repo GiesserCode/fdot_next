@@ -10,15 +10,15 @@ const Clock = dynamic(() => import ("@/app/components/dashboard/Clock"), { ssr: 
 const UserInfo = async ({users}: any) => {
 
     return <div className={`w-full grid place-items-center overflow-x-hidden`}>
-        <div className={`w-full flex justify-between`}>
-            <div className={`w-[30%] grid place-items-center bg-normalBG rounded-xl p-5`}>
+        <div className={`w-full flex justify-between max-lg:flex-col max-lg:gap-5 max-lg:mb-5`}>
+            <div className={`w-[30%] grid place-items-center bg-normalBG rounded-xl p-5 max-lg:w-full`}>
                 <div className={`text-center`}>
                     <Suspense fallback={<ClockSkeleton/>}>
                         <Clock />
                     </Suspense>
                 </div>
             </div>
-            <div className={`w-[30%] grid place-items-center bg-normalBG rounded-xl p-5`}>
+            <div className={`w-[30%] grid place-items-center bg-normalBG rounded-xl p-5 max-lg:w-full`}>
                 <div className={`text-center`}>
                     <h2 className={`${blackOpsOne.className} antialiased text-4xl`}>
                         {users.hours}
@@ -26,17 +26,21 @@ const UserInfo = async ({users}: any) => {
                     <p className={`text-secondary`}>Stunden</p>
                 </div>
             </div>
-            <div className={`w-[30%] flex flex-col justify-between items-center h-full gap-5`}>
-                <div className={`w-full bg-normalBG rounded-xl p-5`}>
-                    <Link href={users.figma_link} className={`w-full cursor-pointer text-xl text-secondary flex items-center gap-2`}><PaperSVG/> Figma Design File</Link>
-                </div>
-                <div className={`w-full bg-normalBG rounded-xl p-5`}>
-                    <Link href={users.code_link} className={`w-full cursor-pointer text-xl text-secondary flex items-center gap-2`}><LinkSVG />Webseite</Link>
-                </div>
-            </div>
+            <Links users={users}/>
         </div>
         <Notes users={users} />
-        <Tasks users={users} />
+        {users.tasks &&<Tasks users={users} />}
+    </div>
+}
+
+function Links({users}: any){
+    return users.code_link && users.figma_link && <div className={`w-[30%] flex flex-col justify-between items-center h-full gap-5 max-lg:w-full`}>
+        <div className={`w-full bg-normalBG rounded-xl p-5`}>
+            <Link href={users.figma_link} className={`w-full cursor-pointer text-xl text-secondary flex items-center gap-2`}><PaperSVG/> Figma Design File</Link>
+        </div>
+        <div className={`w-full bg-normalBG rounded-xl p-5`}>
+            <Link href={users.code_link} className={`w-full cursor-pointer text-xl text-secondary flex items-center gap-2`}><LinkSVG />Webseite</Link>
+        </div>
     </div>
 }
 
