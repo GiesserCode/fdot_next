@@ -23,34 +23,32 @@ function LgForm() {
             Kontakt
         </h1>
         <form
-            className={`flex flex-col justify-center gap-10 ${blackOpsOne.className} antialiased text-base overflow-x-hidden my-5 px-10`}
+            className={`flex flex-col justify-center gap-5 text-base overflow-x-hidden my-5 px-10`}
             action={sendContent}
             onSubmit={handleSubmit}>
-            <div className={`flex gap-2 flex-wrap`}><h2 className={`py-2`}>Hallo Florian, ich
-                bin</h2>
+            <div className={`flex gap-2 flex-wrap`}>
                 <div className={"relative"}>
                     <input
                         type="text"
                         placeholder={"Ihr Name"} readOnly={submitted} onBlur={(e) => handleChange(e)} name={"name"}
                         autoComplete={"off"}
-                        className={`bg-transparent no-focus w-[13ch] focus:bg-normalBG rounded-xl p-2 ${filled.name || "border border-red-600 "}`}
+                        className={`bg-transparent no-focus w-full focus:bg-normalBG rounded-xl p-2 border border-lightBG ${filled.name || "border border-red-600 "}`}
                     />
                     <p className={`absolute text-sm text-red-600 w-[200%] ${filled.name ? "hidden" : "visible"}`}>Füllen
                         Sie dieses Feld aus</p>
                 </div>
             </div>
-            <div className={`flex gap-2 flex-wrap`}><h2 className={`py-2`}>Du kannst mich
-                über </h2>
+            <div className={`flex gap-2 flex-wrap`}>
                 <div className={"relative"}>
                     <input
                         type="text" name={"contact"} autoComplete={"off"}
                         placeholder={"Ihr Kontakt"} readOnly={submitted} onBlur={(e) => handleChange(e)}
-                        className={`bg-transparent no-focus w-[13ch] focus:bg-normalBG rounded-xl p-2 ${filled.contact || "border border-red-600"}`}
+                        className={`bg-transparent no-focus w-full focus:bg-normalBG rounded-xl p-2 border border-lightBG ${filled.contact || "border border-red-600"}`}
                     />
                     <p className={`absolute text-sm text-red-600 w-[200%] ${filled.contact ? "hidden" : "visible"}`}>Füllen
                         Sie dieses Feld aus</p>
                 </div>
-                <h2 className={`py-2`}>erreichen.</h2></div>
+            </div>
             <div className={"relative"}>
                             <textarea placeholder={"Ihre Nachricht"} name={"message"} autoComplete={"off"} rows={4}
                                       readOnly={submitted} onBlur={(e) => handleChange(e)}
@@ -59,7 +57,7 @@ function LgForm() {
                     dieses Feld aus</p>
             </div>
             <input type={"submit"} disabled={submitted || Object.values(filledReal).some((value) => !value)}
-                   className={`no-focus ${submitted ? "disabled:bg-green-600 disabled:bg-opacity-40" : "bg-normalLightBg"} rounded-xl p-2 hover:bg-lightBG transition duration-500 ease-in-out disabled:text-secondary disabled:bg-normalBG disabled:cursor-no-drop`}
+                   className={`no-focus disabled:bg-normalBG bg-primary text-normalBG ${submitted ? "disabled:bg-green-600 disabled:bg-opacity-40" : "disabled:bg-normalBG disabled:bg-opacity-40"} rounded-xl p-2 hover:bg-lightBG transition duration-500 ease-in-out disabled:text-secondary disabled:cursor-no-drop`}
                    value={submitted ? "Fertig" : "Senden"}></input>
         </form>
     </section>
