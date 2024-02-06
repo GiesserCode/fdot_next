@@ -1,11 +1,15 @@
-'use server'
-
 import {cookies} from "next/headers";
 import {createClient} from "@/utils/supabase/server";
 import {redirect} from "next/navigation";
 import {blackOpsOne} from "@/app/ui/fonts";
 import Nachrichten from "@/app/components/dashboard/Nachricht";
 import UserInfo from "@/app/components/dashboard/UserInfo";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: 'Dashboard - Fdot',
+    description: "Let's create Websites!",
+}
 
 const Dashboard = async () => {
 
@@ -29,7 +33,7 @@ const Dashboard = async () => {
 
     return <section className={"w-full p-12 relative overflow-x-hidden"}>
         <h1 className={`${blackOpsOne.className} antialiased text-4xl mb-5`}>
-            Willkommen {users![0].name}
+            Hallo {users![0].name}
         </h1>
         <Nachrichten contacts={contacts}/>
         <UserInfo users={users![0]} />

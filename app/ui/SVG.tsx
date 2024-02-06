@@ -256,9 +256,25 @@ export const EyeSVG = () => {
     </svg>
 }
 
-export const ArrowDownSVG = () => {
-    return <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const ArrowDownSVG = ({ishovered}: any) => {
+    return <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" className={`fill-${ishovered}`}>
         <path d="M15 22.5L14.2929 23.2071L15 23.9142L15.7071 23.2071L15 22.5ZM16 7.5C16 6.94771 15.5523 6.5 15 6.5C14.4477 6.5 14 6.94772 14 7.5L16 7.5ZM9.29289 18.2071L14.2929 23.2071L15.7071 21.7929L10.7071 16.7929L9.29289 18.2071ZM15.7071 23.2071L20.7071 18.2071L19.2929 16.7929L14.2929 21.7929L15.7071 23.2071ZM16 22.5L16 7.5L14 7.5L14 22.5L16 22.5Z" fill="#DDDDDD"/>
     </svg>
 
+}
+
+export const PaperSVG = () => {
+    return <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6.25" y="5" width="17.5" height="21.25" rx="2" stroke="#AAAAAA" strokeWidth="2"/>
+        <path d="M11.25 11.25H18.75" stroke="#AAAAAA" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M11.25 16.25H18.75" stroke="#AAAAAA" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M11.25 21.25H16.25" stroke="#AAAAAA" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+}
+
+export const LinkSVG = () => {
+    return <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.75 3.75V2.75H2.75V3.75H3.75ZM15.5429 16.9571C15.9334 17.3476 16.5666 17.3476 16.9571 16.9571C17.3476 16.5666 17.3476 15.9334 16.9571 15.5429L15.5429 16.9571ZM4.75 13.75V3.75H2.75V13.75H4.75ZM3.75 4.75H13.75V2.75H3.75V4.75ZM3.04289 4.45711L15.5429 16.9571L16.9571 15.5429L4.45711 3.04289L3.04289 4.45711Z" fill="#AAAAAA"/>
+        <path d="M5 18.75V19C5 21.8284 5 23.2426 5.87868 24.1213C6.75736 25 8.17157 25 11 25H19C21.8284 25 23.2426 25 24.1213 24.1213C25 23.2426 25 21.8284 25 19V11C25 8.17157 25 6.75736 24.1213 5.87868C23.2426 5 21.8284 5 19 5H18.75" stroke="#AAAAAA" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
 }

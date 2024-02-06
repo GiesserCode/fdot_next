@@ -1,39 +1,21 @@
-'use client'
-
 import 'splitting/dist/splitting.css';
 import {ChakraProvider} from '@chakra-ui/react'
-import Pricing from "@/app/components/Pricing";
-import Navbar from "@/app/components/Navbar";
-import HeroSection from "@/app/components/HeroSection";
-import Advantages from "@/app/components/Advantages";
-import Ablauf from "@/app/components/Ablauf";
-import AblaufGrafik from "@/app/components/AblaufGrafik";
-import Logos from "@/app/components/Logos";
-import About from "@/app/components/About";
-import References from "@/app/components/References";
-import Offers from "@/app/components/Offers";
-import Footer from "@/app/components/Footer";
-import Contact from "@/app/components/Contact";
-import LgForm from "@/app/components/MobileContact";
+import {Metadata} from "next";
+import Clientpage from "@/app/components/Clientpage";
+
+export const metadata: Metadata = {
+    title: 'Fdot',
+    description: "Auf der Suche nach einer Neuen personalisierten Webseite? Ganzer Service von Design bis zum Aufschalten Ihrer neuen Webseite.",
+    openGraph: {
+        title: 'Fdot',
+        description: 'Auf der Suche nach einer Neuen personalisierten Webseite? Ganzer Service von Design bis zum Aufschalten Ihrer neuen Webseite.',
+    },
+}
 
 export default function Home() {
     return (
         <ChakraProvider>
-            <main className={`min-h-min`}>
-                <Navbar/>
-                <HeroSection/>
-                <Advantages/>
-                <Ablauf/>
-                <AblaufGrafik/>
-                <Logos/>
-                <About/>
-                <References/>
-                <Pricing/>
-                <Contact/>
-                <LgForm />
-                <Offers/>
-                <Footer/>
-            </main>
+            <Clientpage />
         </ChakraProvider>
     );
 }
