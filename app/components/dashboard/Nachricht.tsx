@@ -42,7 +42,7 @@ function Nachrichten({contacts}: any) {
         <div className={`w-full my-5`}>
             {contacts.map((item: any, index: number) => (
                 <div key={index}
-                     className={`w-full border border-lightBG rounded-xl p-2 my-2 text-xl ${item.read ? "text-secondary bg-transparent" : "text-primary bg-normalBG"} cursor-pointer`}>
+                     className={`w-full border border-lightBG rounded-xl p-4 my-2 text-xl ${item.read ? "text-secondary bg-transparent" : "text-primary bg-normalBG"} cursor-pointer`}>
                     <div className={`lg:flex w-full`} onClick={() => toggleTextarea(index)}>
                         <div className={`lg:w-1/3`}>
                             von {item.name}

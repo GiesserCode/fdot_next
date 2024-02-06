@@ -10,7 +10,7 @@ const Clock = dynamic(() => import ("@/app/components/dashboard/Clock"), { ssr: 
 const UserInfo = async ({users}: any) => {
 
     return <div className={`w-full grid place-items-center overflow-x-hidden`}>
-        <div className={`w-full flex justify-between max-lg:flex-col max-lg:gap-5 max-lg:mb-5`}>
+        <div className={`w-full flex justify-between max-lg:flex-col max-lg:gap-5 mb-5`}>
             <div className={`w-[30%] grid place-items-center bg-normalBG rounded-xl p-5 max-lg:w-full`}>
                 <div className={`text-center`}>
                     <Suspense fallback={<ClockSkeleton/>}>

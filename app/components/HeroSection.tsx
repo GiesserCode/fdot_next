@@ -97,7 +97,7 @@ const HeroSection = () => {
                 </div>
                 <div
                     className={`absolute top-1/2 text-4xl left-1/2 shadow-lg shadow-zinc-900 translate-x-[190%] translate-y-[-20%] bg-neutral-500 rounded-[20px] w-40 h-32 flex justify-center items-center rotate-[10deg] z-20
-          max-lg:w-16 max-lg:h-16 max-lg:text-xl max-lg:rounded-lg`}
+          max-lg:w-16 max-lg:h-16 max-lg:text-xl max-lg:rounded-lg max-lg:hidden`}
                     style={{
                         transform: `translate(${position.x * 1.6 + 200}%, ${
                             position.y * 1.6

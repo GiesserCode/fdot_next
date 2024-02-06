@@ -23,11 +23,11 @@ function LgForm() {
             Kontakt
         </h1>
         <form
-            className={`flex flex-col justify-center gap-5 text-base overflow-x-hidden my-5 px-10`}
+            className={`flex flex-col justify-center gap-5 text-base overflow-x-hidden my-5 w-full px-10`}
             action={sendContent}
             onSubmit={handleSubmit}>
             <div className={`flex gap-2 flex-wrap`}>
-                <div className={"relative"}>
+                <div className={"relative w-full"}>
                     <input
                         type="text"
                         placeholder={"Ihr Name"} readOnly={submitted} onBlur={(e) => handleChange(e)} name={"name"}
@@ -39,7 +39,7 @@ function LgForm() {
                 </div>
             </div>
             <div className={`flex gap-2 flex-wrap`}>
-                <div className={"relative"}>
+                <div className={"relative w-full"}>
                     <input
                         type="text" name={"contact"} autoComplete={"off"}
                         placeholder={"Ihr Kontakt"} readOnly={submitted} onBlur={(e) => handleChange(e)}
