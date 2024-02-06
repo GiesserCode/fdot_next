@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     title: 'Fdot',
     description: "Auf der Suche nach einer Neuen personalisierten Webseite? Ganzer Service von Design bis zum Aufschalten Ihrer neuen Webseite.",
     metadataBase: new URL('https://fdot.ch'),
+    authors: [
+        {name: "Florian Giesser", url: "https://fdot.ch"}
+    ],
     openGraph: {
         title: 'Fdot',
         description: 'Auf der Suche nach einer Neuen personalisierten Webseite? Ganzer Service von Design bis zum Aufschalten Ihrer neuen Webseite.',
