@@ -143,7 +143,6 @@ const ContactPage = () => {
                 // @ts-ignore
                 const split = new Split(element, {types: 'lines, words, chars'});
                 const chars = element.querySelectorAll('.char');
-                console.log(element)
 
                 gsap.to(chars, {
                     y: 0,
@@ -164,7 +163,6 @@ const ContactPage = () => {
             const boxScrubElements = document.querySelectorAll('.boxScrub');
 
             boxScrubElements.forEach((element) => {
-                console.log(element)
 
                 gsap.to(element, {
                     y: 0,

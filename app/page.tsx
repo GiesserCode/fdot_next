@@ -6,6 +6,7 @@ import Clientpage from "@/app/components/Clientpage";
 export const metadata: Metadata = {
     title: 'Fdot',
     description: "Auf der Suche nach einer Neuen personalisierten Webseite? Ganzer Service von Design bis zum Aufschalten Ihrer neuen Webseite.",
+    themeColor: "#090909",
     openGraph: {
         title: 'Fdot',
         description: 'Auf der Suche nach einer Neuen personalisierten Webseite? Ganzer Service von Design bis zum Aufschalten Ihrer neuen Webseite.',

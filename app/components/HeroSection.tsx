@@ -178,7 +178,7 @@ const HeroSection = () => {
             </div>
             <div className={`absolute bottom-10 flex gap-5 z-40`}>
                 <Link href={"#kontakt"} className={`bg-primary text-normalBG p-2 rounded-xl text-xl grid place-items-center hover:bg-normalLightBg hover:text-primary border border-primary hover:border-lightBG transition duration-500`}>Kontakt</Link>
-                <div className={`border border-primary p-2 rounded-xl text-xl cursor-pointer flex items-center hover:border-lightBG hover:bg-normalLightBg transition duration-500`} onClick={handleClick}>Mehr erfahren <ArrowDownSVG /></div>
+                <div className={`border border-primary p-2 rounded-xl bg-darkBg text-xl cursor-pointer flex items-center hover:border-lightBG hover:bg-normalLightBg transition duration-500`} onClick={handleClick}>Mehr erfahren <ArrowDownSVG /></div>
             </div>
         </section>
     );

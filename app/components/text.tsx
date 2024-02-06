@@ -104,7 +104,7 @@ export const pricing = {
         ],
         priceTitle: "Preis des Simplen Angebots",
         price: "CHF 1200.-",
-        priceButton: "Jetzt Kaufen",
+        priceButton: "Kontakt aufnehmen",
     },
     advanced: {
         title: "Advanced",
@@ -121,7 +121,7 @@ export const pricing = {
         ],
         priceTitle: "Preis wird nach Aufwand berechnet",
         price: "nach Aufwand",
-        priceButton: "Jetzt Kaufen",
+        priceButton: "Kontakt aufnehmen",
     },
 };
 
