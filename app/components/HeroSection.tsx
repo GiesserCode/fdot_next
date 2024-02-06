@@ -44,8 +44,8 @@ const HeroSection = () => {
                         Webseite
                     </div>
                 </div>
-                <h3
-                    className={`absolute top-1/2 left-1/2 bg-zinc-400 shadow-lg shadow-zinc-900 rounded-3xl -translate-x-[180%] translate-y-[-200%] w-52 h-20 flex justify-center items-center text-4xl -rotate-12 z-20
+                <div
+                    className={`absolute top-1/2 left-1/2 bg-lightBG shadow-lg shadow-zinc-900 rounded-3xl -translate-x-[180%] translate-y-[-200%] w-52 h-20 flex justify-center items-center text-4xl -rotate-12 z-20
           max-lg:w-24 max-lg:h-12 max-lg:text-xl max-lg:rounded-lg`}
                     style={{
                         transform: `translate(${position.x * 0.5 - 180}%, ${
@@ -60,7 +60,7 @@ const HeroSection = () => {
                     <div
                         className={`absolute top-1/2 w-8 h-8 bg-zinc-950 rounded-full translate-y-[-50%] -right-4 max-lg:w-3 max-lg:h-3 max-lg:-right-1`}
                     ></div>
-                </h3>
+                </div>
                 <div
                     className={`absolute top-1/2 text-4xl left-1/2 shadow-lg shadow-zinc-900 translate-x-[-180%] translate-y-[40%] bg-zinc-800 w-64 h-24 rounded-[20px] flex justify-center items-center rotate-[30deg] z-20
           max-lg:w-24 max-lg:h-12 max-lg:text-xl max-lg:rounded-lg`}
