@@ -22,11 +22,11 @@ const Footer = () => {
                     </svg>
                     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Fdot</span>
                 </a>
-                <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 w-full justify-end max-[500px]:justify-center">
                     {navbar.map((item, index) => {
                         return (
-                            <li key={index}>
-                                <a href={`#${links[index]}`} className="hover:underline me-4 md:me-6">{item}</a>
+                            <li key={index} className={`min-w-[48px] min-h-[48px]`}>
+                                <a href={`#${links[index]}`} className="hover:underline min-w-[48px] min-h-[48px] me-4 md:me-6 grid place-items-center">{item}</a>
                             </li>
                         );
                     })}
