@@ -199,7 +199,7 @@ const ContactPage = () => {
                                 Scrollen Sie, um beeindruckende Projekte zu realisieren.
                             </p>
                             <div className={`overflow-hidden py-2 pr-2`}>
-                                <Link href={"mailto:info@fdot.ch"}
+                                <Link href={"mailto:info.fdot@gmail.com"}
                                       className={`bg-normalBG rounded-2xl border border-lightBG p-5 gap-5 flex items-center bottom`}>
                                     <MailSVG/>
                                     <div className={`flex flex-col`}>
@@ -207,7 +207,7 @@ const ContactPage = () => {
                                             Mailen sie mir
                                         </p>
                                         <p className={`background-gradient text-transparent bg-clip-text inline-block text-xl max-lg:text-base`}>
-                                            info@fdot.ch
+                                            info.fdot@gmail.com
                                         </p>
                                     </div>
                                 </Link>
