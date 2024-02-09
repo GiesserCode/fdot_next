@@ -31,12 +31,14 @@ const Dashboard = async () => {
         console.log(usersError)
     }
 
-    return <section className={"w-full p-12 relative overflow-x-hidden"}>
-        <h1 className={`${blackOpsOne.className} antialiased text-4xl mb-5`}>
-            Hallo {users![0].name}
-        </h1>
-        <UserInfo users={users![0]} />
-        <Nachrichten contacts={contacts}/>
+    return <section className={"w-full p-12 relative overflow-x-hidden grid place-items-center"}>
+        <div className={`w-full maxW`}>
+            <h1 className={`${blackOpsOne.className} antialiased text-4xl mb-5`}>
+                Hallo {users![0].name}
+            </h1>
+            <UserInfo users={users![0]} />
+            <Nachrichten contacts={contacts}/>
+        </div>
     </section>
 }
 

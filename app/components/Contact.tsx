@@ -206,7 +206,7 @@ const ContactPage = () => {
                                         <p className={`text-xl text-primary max-lg:text-base`}>
                                             Mailen sie mir
                                         </p>
-                                        <p className={`background-gradient text-transparent bg-clip-text inline-block text-xl max-lg:text-base`}>
+                                        <p className={`text-secondary text-xl max-lg:text-base`}>
                                             info.fdot@gmail.com
                                         </p>
                                     </div>
