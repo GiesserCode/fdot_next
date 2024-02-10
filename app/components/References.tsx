@@ -4,9 +4,9 @@ import {ChangeSizeArrowSVG, LockSVG} from "@/app/ui/SVG";
 
 const References = () => {
 
-    return <section className={`w-full overflow-hidden relative`}>
+    return <section className={`w-full overflow-hidden relative grid place-items-center`}>
         <div id={"referenzen"} className={`id`}></div>
-        <div className={`w-full p-10 flex justify-between max-[1250px]:flex-wrap max-[1250px]:w-full max-w-[3000px]`}>
+        <div className={`w-full p-10 flex justify-between max-[1250px]:flex-wrap max-[1250px]:w-full max-w-[2600px]`}>
             <div className={`w-[50%] left max-w-[60%] min-w-[400px] h-[500px] relative resize-x overflow-auto lg:mr-5 bg-darkBg border-2 border-lightBG rounded-2xl my-10 selection:bg-zinc-600 max-[1250px]:w-full max-[1250px]:max-w-full max-[1250px]:order-2 max-lg:min-w-0`}>
                 <div className={`overflow-hidden w-full h-full flex flex-col rounded-2xl`}>
                     <nav className={`w-full bg-normalLightBg rounded-t-2xl flex p-2 items-center`}>
