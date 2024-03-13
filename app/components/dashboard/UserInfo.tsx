@@ -21,7 +21,7 @@ const UserInfo = async ({users}: any) => {
             <div className={`w-[30%] grid place-items-center bg-normalBG rounded-xl p-5 max-lg:w-full`}>
                 <div className={`text-center`}>
                     <h2 className={`${blackOpsOne.className} antialiased text-4xl`}>
-                        {users.hours}
+                        {users?.hours}
                     </h2>
                     <p className={`text-secondary`}>Stunden</p>
                 </div>

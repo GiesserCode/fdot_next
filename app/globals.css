@@ -82,6 +82,10 @@
     .id{
         @apply absolute top-0 -translate-y-[100px]
     }
+
+    .normal-input{
+        @apply bg-transparent text-secondary focus:text-primary w-full
+    }
 }
 
 .text {
