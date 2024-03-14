@@ -31,12 +31,15 @@ const Dashboard = async () => {
         console.log(usersError)
     }
 
+    const index = users!.findIndex((item: any) => item.id === user.id);
+    const data = users![index]
+
     return <section className={"w-full p-12 relative overflow-x-hidden grid place-items-center"}>
         <div className={`w-full maxW`}>
             <h1 className={`${blackOpsOne.className} antialiased text-4xl mb-5`}>
-                Hallo {users![0]?.name}
+                Hallo {data?.name}
             </h1>
-            <UserInfo users={users![0]} />
+            <UserInfo users={data} />
             <Nachrichten contacts={contacts}/>
         </div>
     </section>

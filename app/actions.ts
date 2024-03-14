@@ -87,10 +87,22 @@ export async function EditUser(formData: FormData) {
     const notes = formData.get("notes")
     const id = formData.get("id")
 
-    console.log(name, contact, hours, figma_link, code_link, notes, id)
+    const {data: users, error} = await supabase
+        .from("users")
+        .update({
+            name: name,
+            contact: contact,
+            hours: hours,
+            figma_link: figma_link,
+            code_link: code_link,
+            notes: notes
+        })
+        .eq("id", id)
+    error && console.log(error)
 }
 
-export default async function NewUser() {
+export async function NewUser(formData: FormData) {
+    const id = formData.get("id")
     const cookieStore = cookies();
     const supabase = createClient(cookieStore);
     const name = "New User"
@@ -98,9 +110,118 @@ export default async function NewUser() {
 
     const {data: users, error} = await supabase
         .from("users")
-        .insert({name: name, contact: contact})
+        .insert({name: name, contact: contact, id: id})
 
-    if (error) {
-        console.error(error)
-    }
+    error && console.error(error)
+}
+
+export const generateUUID = () => {
+    const pattern = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx';
+    return pattern.replace(/[xy]/g, function (c) {
+        const r = (Math.random() * 16) | 0;
+        const v = c === 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+    });
 };
+
+export async function NewSubmit(formData: FormData, id: string) {
+    const cookieStore = cookies();
+    const supabase = createClient(cookieStore);
+    const {data: users, error} = await supabase
+        .from("users")
+        .select("tasks")
+        .eq("id", id)
+    console.log(JSON.stringify(users))
+    error && console.log(error)
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+    const uuid = generateUUID()
+    if (users![0].tasks === null) {
+        // If tasks array is not empty, append new list
+        const newData = [{
+            id: uuid,
+            name: "Name",
+            type: "Design",
+            notes: "Notes",
+            status: "nicht begonnen",
+            endDate: formattedDate,
+            startDate: formattedDate
+        }];
+        const {data: newUsers} = await supabase
+            .from("users")
+            .update({tasks: newData})
+            .eq("id", id)
+    } else {
+        // If tasks array is empty, create a new array
+        users![0].tasks.push({
+            id: uuid,
+            name: "Name",
+            type: "Design",
+            notes: "Notes",
+            status: "nicht begonnen",
+            endDate: formattedDate,
+            startDate: formattedDate
+        });
+
+        const newData = users![0].tasks;
+        console.log(JSON.stringify(newData))
+        const {data: newUsers} = await supabase
+            .from("users")
+            .update({tasks: newData})
+            .eq("id", id)
+    }
+}
+
+export async function UpdateTask(formData: FormData, userId: string, taskId: string) {
+    const name = formData.get("name")
+    const type = formData.get("type")
+    const notes = formData.get("notes")
+    const status = formData.get("status")
+    const endDate = formData.get("endDate")
+    const startDate = formData.get("startDate")
+    const cookieStore = cookies();
+    const supabase = createClient(cookieStore);
+    const {data: users, error} = await supabase
+        .from("users")
+        .select("tasks")
+        .eq("id", userId)
+    console.log(JSON.stringify(users))
+    const taskIndex = users![0].tasks.findIndex((task: any) => task.id === taskId);
+    users![0].tasks[taskIndex] = {
+        ...users![0].tasks[taskIndex], // Keep existing properties
+        name: name || users![0].tasks[taskIndex].name,
+        type: type || users![0].tasks[taskIndex].type,
+        notes: notes || users![0].tasks[taskIndex].notes,
+        status: status || users![0].tasks[taskIndex].status,
+        endDate: endDate || users![0].tasks[taskIndex].endDate,
+        startDate: startDate || users![0].tasks[taskIndex].startDate
+    };
+    console.log(JSON.stringify(users))
+    const {data: newusers} = await supabase
+        .from("users")
+        .update({tasks: users![0].tasks})
+        .eq("id", userId)
+
+}
+
+export async function deleteTask(userId: string, taskId: string){
+    const cookieStore = cookies();
+    const supabase = createClient(cookieStore);
+    const {data: users, error} = await supabase
+        .from("users")
+        .select("tasks")
+        .eq("id", userId)
+    const indexToDelete = users![0].tasks.findIndex((item: any) => item.id === taskId);
+    if (indexToDelete > -1) {
+        // Remove the item from the array
+        users![0].tasks.splice(indexToDelete, 1);
+    }
+    console.log(JSON.stringify(users![0].tasks));
+    const {data: newusers} = await supabase
+        .from("users")
+        .update({tasks: users![0].tasks})
+        .eq("id", userId)
+}

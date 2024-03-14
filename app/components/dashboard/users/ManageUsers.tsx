@@ -4,7 +4,7 @@ import {useState} from "react";
 import Link from "next/link";
 import {BackSVG} from "@/app/ui/SVG";
 import EditTasks from "@/app/components/dashboard/users/EditTasks";
-import NewUser, {EditUser} from "@/app/actions";
+import {EditUser, NewSubmit, NewUser} from "@/app/actions";
 
 const ManageUsers = ({content}: any) => {
 
@@ -40,43 +40,46 @@ const ManageUsers = ({content}: any) => {
                         className={`w-full ${visibleTextarea[index] ? "visible" : "hidden"} flex flex-col gap-5 text-xl`}>
                         <form action={EditUser}>
                             <div className={`flex`}>Name:
-                                <input type="text" className={`no-focus normal-input`} defaultValue={item.name}
+                                <input type="text" autoComplete={"off"} className={`no-focus normal-input`} defaultValue={item.name}
                                        name={"name"}/>
                             </div>
                             <div className={`flex`}>Contact:
-                                <input type="text" className={`no-focus normal-input`} defaultValue={item.contact}
+                                <input type="text" autoComplete={"off"} className={`no-focus normal-input`} defaultValue={item.contact}
                                        name={"contact"}/>
                             </div>
                             <div className={`flex`}>Hours:
-                                <input type="text" className={`no-focus normal-input`} defaultValue={item.hours}
+                                <input type="text" autoComplete={"off"} className={`no-focus normal-input`} defaultValue={item.hours}
                                        name={"hours"}/>
                             </div>
                             <div className={`flex`}>Figma:
-                                <input type="text" className={`no-focus normal-input`} defaultValue={item.figma_link}
+                                <input type="text" autoComplete={"off"} className={`no-focus normal-input`} defaultValue={item.figma_link}
                                        name={"figma_link"}/>
                             </div>
                             <div className={`flex`}>Code:
-                                <input type="text" className={`no-focus normal-input`} defaultValue={item.code_link}
+                                <input type="text" autoComplete={"off"} className={`no-focus normal-input`} defaultValue={item.code_link}
                                        name={"code_link"}/>
                             </div>
                             <div className={`flex`}>Notes:
-                                <input type="text" className={`no-focus normal-input`} defaultValue={item.notes}
+                                <input type="text" autoComplete={"off"} className={`no-focus normal-input`} defaultValue={item.notes}
                                        name={"notes"}/>
                             </div>
-                            <input className={`no-focus normal-input`} defaultValue={item.id} name={"id"}/>
                             <button type={"submit"} className={`p-2 bg-primary text-normalBG rounded-xl`}>Submit</button>
                         </form>
                         <div>
                             <EditTasks item={item}/>
-                            <div className={`w-full h-10 bg-primary text-normalBG grid place-items-center rounded-xl`}>
-                                New Task
-                            </div>
+                            <form action={(e) => NewSubmit(e, item.id)}>
+                                <button className={`w-full h-10 bg-primary text-normalBG grid place-items-center rounded-xl`}>
+                                    New Task
+                                </button>
+                            </form>
+
                         </div>
                     </div>
                 </div>
             ))}
-            <form action={NewUser}>
-                <button type={"submit"} className={`w-full h-10 bg-primary text-normalBG grid place-items-center rounded-xl text-xl`}>New User</button>
+            <form action={NewUser} className={`w-full flex`}>
+                <input type={"text"} placeholder={"user id"} className={`w-full normal-input no-focus`} name={"id"}/>
+                <button type={"submit"} className={`w-[200px] h-10 bg-primary text-normalBG grid place-items-center rounded-xl text-xl`}>New User</button>
             </form>
         </div>
     </section>
