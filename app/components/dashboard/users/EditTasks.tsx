@@ -32,7 +32,7 @@ const EditTasks = ({item}: any) => {
                 </select>
             </div>
             <div className={`flex`}>enddate:
-                <input type="date" className={`no-focus normal-input w-min`} defaultValue={thing.enddate}
+                <input type="date" className={`no-focus normal-input w-min`} defaultValue={thing.endDate}
                        name={"endDate"}/>
             </div>
             <div className={`flex`}>startDate:

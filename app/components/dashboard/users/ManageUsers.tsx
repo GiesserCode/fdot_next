@@ -38,7 +38,7 @@ const ManageUsers = ({content}: any) => {
                     </div>
                     <div
                         className={`w-full ${visibleTextarea[index] ? "visible" : "hidden"} flex flex-col gap-5 text-xl`}>
-                        <form action={EditUser}>
+                        <form action={(e) => EditUser(e, item.id)}>
                             <div className={`flex`}>Name:
                                 <input type="text" autoComplete={"off"} className={`no-focus normal-input`} defaultValue={item.name}
                                        name={"name"}/>
@@ -60,7 +60,7 @@ const ManageUsers = ({content}: any) => {
                                        name={"code_link"}/>
                             </div>
                             <div className={`flex`}>Notes:
-                                <input type="text" autoComplete={"off"} className={`no-focus normal-input`} defaultValue={item.notes}
+                                <textarea autoComplete={"off"} className={`no-focus normal-input`} defaultValue={item.notes}
                                        name={"notes"}/>
                             </div>
                             <button type={"submit"} className={`p-2 bg-primary text-normalBG rounded-xl`}>Submit</button>

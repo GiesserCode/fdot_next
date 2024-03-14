@@ -75,7 +75,7 @@ export async function setRead(id: string, read: boolean) {
     error && console.log(error)
 }
 
-export async function EditUser(formData: FormData) {
+export async function EditUser(formData: FormData, id: string) {
     const cookieStore = cookies();
     const supabase = createClient(cookieStore);
     noStore();
@@ -85,7 +85,6 @@ export async function EditUser(formData: FormData) {
     const figma_link = formData.get("figma_link")
     const code_link = formData.get("code_link")
     const notes = formData.get("notes")
-    const id = formData.get("id")
 
     const {data: users, error} = await supabase
         .from("users")
@@ -188,7 +187,6 @@ export async function UpdateTask(formData: FormData, userId: string, taskId: str
         .from("users")
         .select("tasks")
         .eq("id", userId)
-    console.log(JSON.stringify(users))
     const taskIndex = users![0].tasks.findIndex((task: any) => task.id === taskId);
     users![0].tasks[taskIndex] = {
         ...users![0].tasks[taskIndex], // Keep existing properties
@@ -199,7 +197,6 @@ export async function UpdateTask(formData: FormData, userId: string, taskId: str
         endDate: endDate || users![0].tasks[taskIndex].endDate,
         startDate: startDate || users![0].tasks[taskIndex].startDate
     };
-    console.log(JSON.stringify(users))
     const {data: newusers} = await supabase
         .from("users")
         .update({tasks: users![0].tasks})
