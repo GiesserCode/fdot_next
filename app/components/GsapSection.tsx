@@ -14,6 +14,7 @@ const GsapSection = () => {
 
         textElements.forEach((element) => {
             //const split = new Split(element, { types: 'lines, words, chars' });
+            // @ts-ignore
             const split = new Split(element, { types: 'lines, words, chars' });
 
             gsap.to(element.querySelectorAll('.char'), {
@@ -29,6 +30,7 @@ const GsapSection = () => {
 
         appearElements.forEach((element) => {
             //const split = new Split({ target: element,  types: 'lines, words, chars' });
+            // @ts-ignore
             const split = new Split(element, { types: 'lines, words, chars' });
             const chars = element.querySelectorAll('.char');
 
@@ -43,6 +45,7 @@ const GsapSection = () => {
 
         appearTitleElements.forEach((element) => {
             //const split = new Split({ target: element,  types: 'lines, words, chars' });
+            // @ts-ignore
             const split = new Split(element, { types: 'lines, words, chars' });
             const chars = element.querySelectorAll('.char');
             const speed = parseInt(element.id)

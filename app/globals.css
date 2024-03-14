@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555555; /* Set your desired scrollbar color */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #222222; /* Set your desired scrollbar track color */
+}
+
 @layer components {
     .section-Center {
         @apply w-full grid place-items-center relative

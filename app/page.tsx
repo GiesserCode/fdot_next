@@ -27,7 +27,6 @@ export default function Home() {
             <Logos/>
             <About/>
             <References/>
-            <GsapSection/>
             <Pricing/>
             <Contact/>
             <Offers/>

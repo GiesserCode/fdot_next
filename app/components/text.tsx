@@ -24,22 +24,22 @@ export const advantages = [
     {
         icon: <CompassSVG/>,
         title: "Modern",
-        description: "Ich erstelle ihnen ein auf ihr Unternhemen und ihre Branche angepasstes Design."
+        description: "Ich erstelle Ihnen ein auf ihr Unternhemen und ihre Branche angepasstes Design."
     },
     {
         icon: <UserSVG/>,
         title: "Handgemacht",
-        description: "Ich programmiere ihre Webseite aus eigener Hand und mache es für kann zukünftige Änderungen einfach vornehmen."
+        description: "Ich programmiere Ihre Webseite aus eigener Hand und mach es für kann zukünftige Änderungen einfach vornehmen."
     },
     {
         icon: <LightningSVG/>,
         title: "Schnell",
-        description: "Ich kreire ihre seite basierend auf ihren wünschen"
+        description: "Ich kreire ihre Seite basierend auf ihren wünschen"
     },
     {
         icon: <NavigatorSVG/>,
         title: "Personalisiert",
-        description: "Ich kreire ihre seite basierend auf ihren wünschen"
+        description: "Ich kreire ihre Seite basierend auf ihren wünschen"
     },
 ]
 
