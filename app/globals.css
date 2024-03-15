@@ -49,7 +49,7 @@
     }
 
     .ball {
-        @apply w-5 h-5 rounded-full m-1
+        @apply w-5 h-5 rounded-full m-1 max-lg:w-3 max-lg:h-3
     }
 
     .section-horizontally {
@@ -60,15 +60,15 @@
         @apply border-0 outline-0 focus:outline-none focus:border-0
     }
     .input{
-        @apply bg-transparent text-primary text-6xl whitespace-nowrap placeholder:text-lightBG flex items-center h-[75px]
+        @apply bg-transparent text-primary text-6xl whitespace-nowrap placeholder:text-lightBG flex items-center h-[75px] max-lg:text-2xl bg-normalBG rounded-2xl px-1
     }
 
     .input-text{
-        @apply text-primary text-6xl text h-[75px] flex items-center whitespace-nowrap
+        @apply text-primary text-6xl text h-[75px] flex items-center whitespace-nowrap max-lg:text-2xl
     }
 
     .textarea{
-        @apply bg-transparent text-primary text-6xl placeholder:text-lightBG pt-2 focus:bg-normalBG rounded-2xl border border-normalLightBg mr-5
+        @apply bg-transparent text-primary text-6xl placeholder:text-lightBG pt-2 focus:bg-normalBG rounded-2xl border border-normalLightBg mr-5 max-lg:text-2xl
     }
 
     .colortitle{
@@ -76,11 +76,15 @@
     }
 
     .box{
-        @apply border border-lightBG bg-normalBG rounded-2xl p-5 m-5 max-w-[500px] text-center
+        @apply border border-lightBG bg-normalBG rounded-2xl p-5 m-5 max-w-[500px] text-center max-lg:mx-0
     }
 
     .id{
         @apply absolute top-0 -translate-y-[100px]
+    }
+
+    .normal-input{
+        @apply bg-transparent text-secondary focus:text-primary w-full
     }
 }
 

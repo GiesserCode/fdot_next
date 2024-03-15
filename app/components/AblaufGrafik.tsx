@@ -5,7 +5,7 @@ import {ablaufGrafik} from "@/app/components/text";
 const weeks = Array.from({ length: 8 }, (_, index) => index + 1);
 
 const AblaufGrafik = () => {
-    return <section className={`section-Center h-[800px] p-5 mb-20 selection:bg-lightBG`}>
+    return <section className={`section-Center h-[800px] p-5 mb-20 selection:bg-lightBG max-lg:hidden`}>
         <div className={`w-full h-full p-10 bg-normalBG rounded-2xl border border-lightBG max-w-[3000px] bottom section`}>
             <div className="grid grid-cols-8 grid-rows-5 w-full h-full relative">
 

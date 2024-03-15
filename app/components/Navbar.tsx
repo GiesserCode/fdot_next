@@ -11,10 +11,7 @@ function Navbar() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const openDropdown = (index: number) => {
-    isDropdownOpen === index ? setisDropdownOpen(-1) : setisDropdownOpen(index);
+    console.log("test")
   };
 
   const calc = (index: number) => {
@@ -82,13 +79,12 @@ function Navbar() {
           {navbar.map((item, index) => {
             return (
               <li
-                key={item}
+                key={item} onClick={toggleMenu}
                 className={`max-lg:relative h-full min-w-[120px] transition ease-in-out duration-500 grid place-items-center max-lg:w-full mx-2`}
               >
                 <Link
                   href={`#${dropdown[index] === null ? links[index] : ""}`}
                   id={`nav-item-${index}`}
-                  onClick={() => openDropdown(index)}
                   className={`peer no-underline transition ease-in-out duration-500 text-white w-full h-full grid place-items-center z-30 bg-zinc-950 max-lg:h-24 outline-none hover:bg-normalBG rounded-xl`}
                 >
                   {item}

@@ -1,12 +1,6 @@
-import type { Metadata } from 'next'
-import {blackOpsOne, onest} from "@/app/ui/fonts";
+import {onest} from "@/app/ui/fonts";
 import './globals.css'
-import {black} from "next/dist/lib/picocolors";
-
-export const metadata: Metadata = {
-  title: 'Fdot',
-  description: "Let's create Websites!",
-}
+import {Analytics} from "@vercel/analytics/react"
 
 export default function RootLayout({
   children,
@@ -15,7 +9,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${onest.className} antialiased bg-darkBg text-primary`}>{children}</body>
+      <body className={`${onest.className} antialiased bg-darkBg text-primary`}>{children}<Analytics /></body>
     </html>
   )
 }

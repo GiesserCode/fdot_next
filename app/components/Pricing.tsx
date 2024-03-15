@@ -1,6 +1,7 @@
 'use client'
 import {pricing} from "@/app/components/text";
 import {blackOpsOne} from "@/app/ui/fonts";
+import Link from "next/link";
 
 const Pricing = () => {
     return (
@@ -18,11 +19,11 @@ const Pricing = () => {
 
 function PricingTitle() {
     return (
-        <div className="text-center mt-24 flex flex-col items-center">
-            <h2 className={`text-primary ${blackOpsOne.className} text-5xl m-2 max-lg:text-4xl text`}>
+        <div className="text-center flex flex-col items-center max-lg:w-full">
+            <h2 className={`text-primary ${blackOpsOne.className} text-5xl m-2 max-lg:text-2xl text`}>
                 {pricing.title}
             </h2>
-            <p id={"0.02"} className="text-2xl text-zinc-400 w-9/12 max-lg:text-lg appear">
+            <p id={"0.02"} className="text-2xl text-zinc-400 w-9/12 max-lg:text-base appear">
                 {pricing.description}
             </p>
         </div>
@@ -48,10 +49,10 @@ function Simple() {
 function SimpleTitle() {
     return (
         <div>
-            <h2 className={`text-2xl ${blackOpsOne.className} background-gradient text-transparent bg-clip-text inline-block text`}>
+            <h2 className={`text-2xl ${blackOpsOne.className} background-gradient text-transparent bg-clip-text inline-block text max-lg:text-primary`}>
                 {pricing.simple.title}
             </h2>
-            <p id={"0.02"} className="text-zinc-400 text-lg appear">{pricing.simple.description}</p>
+            <p id={"0.02"} className="text-zinc-400 text-lg appear max-lg:text-base">{pricing.simple.description}</p>
         </div>
     );
 }
@@ -59,7 +60,7 @@ function SimpleTitle() {
 function SimpleIncluded() {
     return (
         <div>
-            <h3 className={`text-sm ${blackOpsOne.className} background-gradient text-transparent bg-clip-text inline-block text`}>
+            <h3 className={`text-sm ${blackOpsOne.className} background-gradient text-transparent bg-clip-text inline-block text max-lg:text-primary`}>
             {pricing.simple.includedTitle}
             </h3>
             <div className="flex flex-wrap max-lg:text-sm">
@@ -77,7 +78,7 @@ function SimpleIncluded() {
                                 clipRule="evenodd"
                             />
                         </svg>
-                        <span className={`text`}>{items}</span>
+                        <span className={`text text-[0.8rem]`}>{items}</span>
                     </p>
                 ))}
             </div>
@@ -87,17 +88,17 @@ function SimpleIncluded() {
 
 function SimplePrice() {
     return (
-        <div className="w-1/4 bg-zinc-900 rounded-xl border border-zinc-600 m-2 max-lg:w-10/12 right">
-            <h3 className="h-1/3 w-full text-lg text-zinc-400 grid place-items-center text-center max-lg:text-sm max-lg:p-2">
+        <div className="bg-normalLightBg m-3 rounded-2xl flex flex-col items-center justify-evenly w-1/4 border border-lightBG max-lg:w-10/12 max-lg:gap-2 max-lg:p-2">
+            <h3 className="text-lg text-secondary max-lg:hidden">
                 {pricing.simple.priceTitle}
             </h3>
-            <h2 className={`h-1/3 w-full ${blackOpsOne.className} text-4xl text-primary grid place-items-center max-lg:text-2xl`}>
+            <h2 className={`${blackOpsOne.className} antialiased text-4xl max-lg:text-xl`}>
                 {pricing.simple.price}
             </h2>
-            <button
-                className={`m-5 p-2 w-10/12 text-sm ${blackOpsOne.className} text-primary bg-lightBG rounded-xl lg:hover:bg-normalLightBg ease-in-out duration-500`}>
+            <Link href={"#kontakt"}
+                className={`${blackOpsOne.className} antialiased bg-lightBG w-10/12 p-2 rounded-xl text-center max-lg:text-base`}>
                 {pricing.simple.priceButton}
-            </button>
+            </Link>
         </div>
     );
 }
@@ -121,8 +122,8 @@ function Advanced() {
 function AdvancedTitle() {
     return (
         <div>
-            <h2 className={`text-2xl ${blackOpsOne.className}`}>{pricing.advanced.title}</h2>
-            <p id={"0.02"} className="text-zinc-400 text-lg appear">{pricing.advanced.description}</p>
+            <h2 className={`text-2xl ${blackOpsOne.className} antialiased max-lg:text-primary`}>{pricing.advanced.title}</h2>
+            <p id={"0.02"} className="text-zinc-400 text-lg appear max-lg:text-base">{pricing.advanced.description}</p>
         </div>
     );
 }
@@ -130,7 +131,7 @@ function AdvancedTitle() {
 function AdvancedIncluded() {
     return (
         <div>
-            <h3 className={`text-sm ${blackOpsOne.className} text-primary text`}>
+            <h3 className={`text-sm ${blackOpsOne.className} antialiased text-primary text max-lg:text-primary`}>
                 {pricing.advanced.includedTitle}
             </h3>
             <div className="flex flex-wrap max-lg:text-sm">
@@ -158,18 +159,17 @@ function AdvancedIncluded() {
 
 function AdvancedPrice() {
     return (
-        <div
-            className="w-1/4 bg-zinc-900 rounded-xl border border-zinc-600 m-2 max-lg:w-10/12 flex flex-col justify-evenly relative right">
-            <h3 className="h-1/3 w-full text-lg text-zinc-400 grid place-items-center text-center max-lg:text-sm max-lg:p-2">
+        <div className="bg-normalLightBg m-3 rounded-2xl flex flex-col items-center justify-evenly w-1/4 border border-lightBG max-lg:w-10/12 max-lg:gap-2 max-lg:p-2">
+            <h3 className="text-lg text-secondary max-lg:hidden">
                 {pricing.advanced.priceTitle}
             </h3>
-            <h2 className={`h-1/3 w-full ${blackOpsOne.className} text-4xl text-primary grid place-items-center max-lg:text-2xl`}>
+            <h2 className={`${blackOpsOne.className} antialiased text-4xl max-lg:text-xl`}>
                 {pricing.advanced.price}
             </h2>
-            <button
-                className={`m-5 p-2 w-10/12 text-sm ${blackOpsOne.className} text-primary rounded-xl bg-lightBG lg:hover:bg-normalLightBg ease-in-out duration-500`}>
+            <Link href={"#kontakt"}
+                  className={`${blackOpsOne.className} antialiased bg-lightBG w-10/12 p-2 rounded-xl text-center max-lg:text-base`}>
                 {pricing.advanced.priceButton}
-            </button>
+            </Link>
         </div>
     );
 }

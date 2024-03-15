@@ -1,4 +1,4 @@
-'use client'
+/*'use client'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import {useEffect} from 'react'
@@ -104,4 +104,4 @@ const GsapSection = () => {
     }, []);
 };
 
-export default GsapSection;
+export default GsapSection;*/
