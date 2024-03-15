@@ -18,10 +18,10 @@ const ManageUsers = ({content}: any) => {
         });
     };
     return <section className={`w-full grid place-items-center`}>
-        <div className={`w-full p-12 pt-20 relative overflow-x-hidden maxW`}>
+        <div className={`w-full lg:p-12 p-4 pt-20 relative overflow-x-hidden maxW`}>
             <Link
                 href="/dashboard"
-                className="focus:outline-none focus:bg-gblue absolute z-30 left-8 top-8 py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm"
+                className="focus:outline-none focus:bg-gblue absolute z-30 left-8 top-8 py-2 px-4 max-lg:left-0 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm"
             >
                 <BackSVG/>
                 {" "}
@@ -33,8 +33,8 @@ const ManageUsers = ({content}: any) => {
                     <div key={index}
                          className={`bg-normalBG border border-lightBG text-primary p-4 rounded-xl text-xl cursor-pointer`}>
                         <div className={`flex ${visibleTextarea[index] && "mb-5"}`} onClick={() => toggleTextarea(index)}>
-                            <div className={`w-1/2`}>{item.name}</div>
-                            <div className={`w-1/2`}>{item.contact}</div>
+                            <div className={`w-1/2 max-lg:w-full`}>{item.name}</div>
+                            <div className={`w-1/2 max-lg:hidden`}>{item.contact}</div>
 
                         </div>
                         <div

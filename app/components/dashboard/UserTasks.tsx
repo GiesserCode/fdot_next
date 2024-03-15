@@ -17,7 +17,7 @@ function Tasks({users}: any) {
 
     return <div className={`w-full flex flex-col gap-5 relative`}>
         <div className={`w-full rounded-xl px-5 text-xl flex text-secondary`}>
-            <div className={`w-full flex items-center ${blackOpsOne.className} antialiased`}>
+            <div className={`w-full flex max-lg:hidden items-center ${blackOpsOne.className} antialiased`}>
                 <div className={`w-1/5`}>Name</div>
                 <div className={`w-1/5`}>Status</div>
                 <div className={`w-1/5`}>Fach</div>
@@ -28,21 +28,21 @@ function Tasks({users}: any) {
         {users.tasks.map((item: any, index: number) => (
             <div key={index} className={`w-full bg-normalBG rounded-xl p-5 text-xl flex`}
                  onClick={() => toggleTextarea(index)}>
-                <div className={`w-full flex items-center`}>
-                    <div className={`w-1/5 ${blackOpsOne.className} antialiased`}>{item.name}</div>
-                    <div className={`w-1/5`}>
+                <div className={`w-full flex items-center flex-wrap gap-5`}>
+                    <div className={`w-1/5 max-lg:w-min whitespace-nowrap ${blackOpsOne.className} antialiased`}>{item.name}</div>
+                    <div className={`w-1/5 max-lg:w-min whitespace-nowrap`}>
                         <div
                             className={`${item.status === "nicht begonnen" ? "bg-lightBG" : item.status === "begonnen" ? "bg-[#30436b]" : "bg-[#375840]"} rounded-lg p-2 w-min whitespace-nowrap`}>
                             {item.status}
                         </div>
                     </div>
-                    <div className={`w-1/5`}>
+                    <div className={`w-1/5 max-lg:w-min whitespace-nowrap`}>
                         <div className={`${item.type === "Design" ? "bg-[#462f63]" : "bg-[#57242c]"} w-min p-2 rounded-lg`}>
                             {item.type}
                         </div>
                     </div>
-                    <div className={`w-1/5`}>{item.startDate}</div>
-                    <div className={`w-1/5`}>{item.endDate}</div>
+                    <div className={`w-1/5 max-lg:w-min whitespace-nowrap`}>{item.startDate}</div>
+                    <div className={`w-1/5 max-lg:w-min whitespace-nowrap`}>{item.endDate}</div>
                 </div>
                 <div
                     className={`absolute right-0 border border-lightBG h-full max-w-[500px] break-words top-0 bg-normalLightBg rounded-xl p-2 transition duration-500 ease-in-out ${visibleTextarea[index] ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}>
