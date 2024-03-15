@@ -3,7 +3,7 @@ import {blackOpsOne} from "@/app/ui/fonts";
 import {useState} from "react";
 import Link from "next/link";
 import {BackSVG} from "@/app/ui/SVG";
-import EditTasks from "@/app/components/dashboard/users/EditTasks";
+import EditTasks from "@/app/components/dashboard/administration/EditTasks";
 import {EditUser, NewSubmit, NewUser} from "@/app/actions";
 
 const ManageUsers = ({content}: any) => {
