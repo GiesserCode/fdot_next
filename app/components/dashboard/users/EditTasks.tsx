@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import {EditTask} from "@/app/actions";
-
-const EditTasks = ({item}: any) => {
-    return <>{item.tasks?.map((thing: any, number: number) => (
-        <form key={number} className={`bg-normalBG border border-lightBG p-2 rounded-xl mb-4`} action={(e) => EditTask(e, item.id, thing.id)}>
-            <div className={`flex`}>name:
-                <input type="text" className={`no-focus normal-input`} defaultValue={thing.name} name={"name"}/>
-=======
 import {deleteTask, UpdateTask} from "@/app/actions";
 import {TrashSVG} from "@/app/ui/SVG";
 
@@ -21,7 +12,6 @@ const EditTasks = ({item}: any) => {
                 <button type={"button"} onClick={() => deleteTask(item.id, thing.id)}>
                     <TrashSVG/>
                 </button>
->>>>>>> 04e4eccb57f706b943243338b6c6be9574851fb2
             </div>
             <div className={`flex`}>type:
                 <select className={`no-focus normal-input w-min`} defaultValue={thing.type} name={"type"}>
@@ -42,11 +32,7 @@ const EditTasks = ({item}: any) => {
                 </select>
             </div>
             <div className={`flex`}>enddate:
-<<<<<<< HEAD
-                <input type="date" className={`no-focus normal-input w-min`} defaultValue={thing.enddate}
-=======
                 <input type="date" className={`no-focus normal-input w-min`} defaultValue={thing.endDate}
->>>>>>> 04e4eccb57f706b943243338b6c6be9574851fb2
                        name={"endDate"}/>
             </div>
             <div className={`flex`}>startDate:

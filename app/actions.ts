@@ -172,15 +172,9 @@ export async function NewSubmit(formData: FormData, id: string) {
             .update({tasks: newData})
             .eq("id", id)
     }
-<<<<<<< HEAD
-};
-
-export async function EditTask(formData: FormData, userId: string, taskId: string) {
-=======
 }
 
 export async function UpdateTask(formData: FormData, userId: string, taskId: string) {
->>>>>>> 04e4eccb57f706b943243338b6c6be9574851fb2
     const name = formData.get("name")
     const type = formData.get("type")
     const notes = formData.get("notes")
@@ -193,10 +187,6 @@ export async function UpdateTask(formData: FormData, userId: string, taskId: str
         .from("users")
         .select("tasks")
         .eq("id", userId)
-<<<<<<< HEAD
-    console.log(JSON.stringify(users))
-=======
->>>>>>> 04e4eccb57f706b943243338b6c6be9574851fb2
     const taskIndex = users![0].tasks.findIndex((task: any) => task.id === taskId);
     users![0].tasks[taskIndex] = {
         ...users![0].tasks[taskIndex], // Keep existing properties
@@ -207,18 +197,12 @@ export async function UpdateTask(formData: FormData, userId: string, taskId: str
         endDate: endDate || users![0].tasks[taskIndex].endDate,
         startDate: startDate || users![0].tasks[taskIndex].startDate
     };
-<<<<<<< HEAD
-    console.log(JSON.stringify(users))
-=======
->>>>>>> 04e4eccb57f706b943243338b6c6be9574851fb2
     const {data: newusers} = await supabase
         .from("users")
         .update({tasks: users![0].tasks})
         .eq("id", userId)
 
 }
-<<<<<<< HEAD
-=======
 
 export async function deleteTask(userId: string, taskId: string){
     const cookieStore = cookies();
@@ -238,4 +222,3 @@ export async function deleteTask(userId: string, taskId: string){
         .update({tasks: users![0].tasks})
         .eq("id", userId)
 }
->>>>>>> 04e4eccb57f706b943243338b6c6be9574851fb2
