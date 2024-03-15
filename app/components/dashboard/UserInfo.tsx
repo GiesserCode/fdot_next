@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 
 const Clock = dynamic(() => import ("@/app/components/dashboard/Clock"), { ssr: false })
 const UserInfo = async ({users}: any) => {
+    console.log(users)
 
     return <div className={`w-full grid place-items-center overflow-x-hidden`}>
         <div className={`w-full flex justify-between max-lg:flex-col max-lg:gap-5 mb-5`}>
@@ -29,7 +30,7 @@ const UserInfo = async ({users}: any) => {
             <Links users={users}/>
         </div>
         <Notes users={users} />
-        {users.tasks &&<Tasks users={users} />}
+        {users.tasks.length !== 0 && <Tasks users={users} />}
     </div>
 }
 
@@ -46,7 +47,7 @@ function Links({users}: any){
 
 function Notes({users}: any){
     return users.notes && <div className={`w-full text-start my-10 text-2xl text-secondary`}>
-        <h2 className={`text-start`}>{users.notes}</h2>
+        <textarea className={`text-start no-focus normal-input w-full`} rows={6} disabled={true}>{users.notes}</textarea>
     </div>
 }
 
