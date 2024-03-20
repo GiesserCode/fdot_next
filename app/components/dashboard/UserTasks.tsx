@@ -30,13 +30,13 @@ function Tasks({users}: any) {
                  onClick={() => toggleTextarea(index)}>
                 <div className={`w-full flex items-center flex-wrap max-lg:gap-5`}>
                     <div className={`w-1/5 max-lg:w-full whitespace-nowrap ${blackOpsOne.className} antialiased`}>{item.name}</div>
-                    <div className={`w-1/5 max-lg:min-w-1/3 max-lg:w-min text-sm whitespace-nowrap`}>
+                    <div className={`w-1/5 max-lg:min-w-1/3 max-lg:w-min max-lg:text-sm whitespace-nowrap`}>
                         <div
                             className={`${item.status === "nicht begonnen" ? "bg-lightBG" : item.status === "begonnen" ? "bg-[#30436b]" : "bg-[#375840]"} rounded-lg p-2 w-min whitespace-nowrap`}>
                             {item.status}
                         </div>
                     </div>
-                    <div className={`w-1/5 max-lg:min-w-1/3 max-lg:w-min text-sm whitespace-nowrap`}>
+                    <div className={`w-1/5 max-lg:min-w-1/3 max-lg:w-min max-lg:text-sm whitespace-nowrap`}>
                         <div className={`${item.type === "Design" ? "bg-[#462f63]" : "bg-[#57242c]"} w-min p-2 rounded-lg`}>
                             {item.type}
                         </div>
