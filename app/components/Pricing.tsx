@@ -49,7 +49,7 @@ function Simple() {
 function SimpleTitle() {
     return (
         <div>
-            <h2 className={`text-2xl ${blackOpsOne.className} background-gradient text-transparent bg-clip-text inline-block text max-lg:text-primary`}>
+            <h2 className={`text-2xl ${blackOpsOne.className} text-primary text max-lg:text-primary`}>
                 {pricing.simple.title}
             </h2>
             <p id={"0.02"} className="text-zinc-400 text-lg appear max-lg:text-base">{pricing.simple.description}</p>
@@ -60,7 +60,7 @@ function SimpleTitle() {
 function SimpleIncluded() {
     return (
         <div>
-            <h3 className={`text-sm ${blackOpsOne.className} background-gradient text-transparent bg-clip-text inline-block text max-lg:text-primary`}>
+            <h3 className={`text-sm ${blackOpsOne.className} text-primary max-lg:text-primary`}>
             {pricing.simple.includedTitle}
             </h3>
             <div className="flex flex-wrap max-lg:text-sm">
