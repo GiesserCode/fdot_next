@@ -138,7 +138,7 @@ const WriteInput = ({userWordset, officialWordset, id}: any) => {
                  console.log("4: " + notDoneWrongWords[randomIndexDone])
                 }
             }
-            return newWord ? newWord : {id:"f5a94aa4-7f07-4a2d-94a1-8f6f2e9de85a",word:"Every word done",definition:"Every word done"}
+            return newWord ? newWord : localStorage.setItem(id, JSON.stringify(userWordset));
         });
         event.target.elements.wordInput.value = "";
         setPerfect(false)
