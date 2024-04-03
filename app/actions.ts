@@ -4,7 +4,6 @@ import {z} from 'zod'
 import {cookies} from 'next/headers'
 import {createClient} from "@/utils/supabase/server";
 import {unstable_noStore as noStore} from 'next/cache';
-import {redirect} from "next/navigation";
 
 const sendContentSchema = z.object({name: z.string(), contact: z.string(), message: z.string()})
 
@@ -251,7 +250,7 @@ export async function getUserData() {
     if (accounts){
         return accounts
     } else{
-        redirect("/login")
+        console.log(error)
     }
 }
 
