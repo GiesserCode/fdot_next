@@ -78,7 +78,7 @@ function SimpleIncluded() {
                                 clipRule="evenodd"
                             />
                         </svg>
-                        <span className={`text text-[0.8rem]`}>{items}</span>
+                        <span className={`text`}>{items}</span>
                     </p>
                 ))}
             </div>
