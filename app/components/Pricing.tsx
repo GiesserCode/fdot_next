@@ -61,12 +61,12 @@ function SimpleTitle({item}: any) {
 function SimpleIncluded({item, index}: any) {
     return (
         <div>
-            <h3 className={`text-sm ${blackOpsOne.className} text-primary max-lg:text-primary`}>
+            <h3 className={`text-sm ${blackOpsOne.className} text-primary max-lg:text-primary max-lg:mb-2`}>
             {item.includedTitle}
             </h3>
-            <div className="flex flex-wrap max-lg:text-sm">
+            <div className="flex flex-wrap max-lg:text-sm max-lg:flex-col max-lg:w-full">
                 {item.included.map((items: any) => (
-                    <p key={items} className="w-1/2 h-1/2 p-2 relative flex gap-x-3">
+                    <p key={items} className="w-1/2 h-1/2 p-2 relative flex gap-x-3 max-lg:w-full">
                         <svg
                             className={`h-6 w-5 ${index === 0 ? "text-purpleMain" : "text-secondary"}`}
                             viewBox="0 0 20 20"
