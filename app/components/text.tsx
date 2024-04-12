@@ -102,7 +102,7 @@ export const pricing = {
             "Eigene Domain",
             "Gratis hosting",
         ],
-        priceTitle: "Preis des Simplen Angebots",
+        priceTitle: "Preis wird nach Aufwand berechnet",
         price: "999.-",
         priceButton: "Kontakt aufnehmen",
     },
@@ -122,7 +122,24 @@ export const pricing = {
         priceTitle: "Preis wird nach Aufwand berechnet",
         price: "800.-",
         priceButton: "Kontakt aufnehmen",
-    },]
+    },
+        {
+            title: "Reparatur und Hosting",
+            description:
+                "Sind Sie mit Ihrer Webseite unzufrieden oder zahlen Sie zu viel für Ihr Hosting? Kontaktieren Sie mich und wir schauen uns die Probleme gemeinsam an.",
+            includedTitle: "Das gehört dazu",
+            included: [
+                "Technische Unterstützung",
+                "Änderungen im Design",
+                "Beratung",
+                "Hinzufügen von neuen Seiten",
+                "Problembehebung",
+                "Günstiges Hosting",
+            ],
+            priceTitle: "Beratung Gratis",
+            price: "12.-/h",
+            priceButton: "Kontakt aufnehmen",
+        },]
 };
 
 export const contact = {
