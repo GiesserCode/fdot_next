@@ -89,7 +89,7 @@ export const pricing = {
     title: "Preise",
     description:
         "Die Preise können erheblich variieren, abhängig von dem investierten Aufwand.",
-    simple: {
+    pricing: [{
         title: "Simple",
         description:
             "Mit dem Simple angebot erhalten sie eine einfache Webseite für ihr Unternehmen oder Hobby. Zu diesem Angebot kommt dazu, dass ich ihnen kostenfrei zeige, wie sie in Zukunft zugriff auf die Webseite haben.",
@@ -106,7 +106,7 @@ export const pricing = {
         price: "999.-",
         priceButton: "Kontakt aufnehmen",
     },
-    advanced: {
+    {
         title: "Wordpress",
         description:
             "Mein WordPress-Angebot mit einfachem und kostengünstigem Design ist jetzt verfügbar! Erhalten Sie eine maßgeschneiderte Website für Ihr Unternehmen oder Hobby, die Ihren Bedürfnissen entspricht.",
@@ -122,7 +122,7 @@ export const pricing = {
         priceTitle: "Preis wird nach Aufwand berechnet",
         price: "800.-",
         priceButton: "Kontakt aufnehmen",
-    },
+    },]
 };
 
 export const contact = {
