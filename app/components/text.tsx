@@ -137,7 +137,7 @@ export const pricing = {
                 "Günstiges Hosting",
             ],
             priceTitle: "Beratung Gratis",
-            price: "20.-/h",
+            price: "25.-/h",
             priceButton: "Kontakt aufnehmen",
         },]
 };
