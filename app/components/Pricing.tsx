@@ -67,7 +67,7 @@ function SimpleIncluded() {
                 {pricing.simple.included.map((items) => (
                     <p key={items} className="w-1/2 h-1/2 p-2 relative flex gap-x-3">
                         <svg
-                            className="h-6 w-5 text-purpleMain bottom"
+                            className="h-6 w-5 text-purpleMain"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             aria-hidden="true"
@@ -138,7 +138,7 @@ function AdvancedIncluded() {
                 {pricing.advanced.included.map((items) => (
                     <p key={items} className="w-1/2 h-1/2 p-2 relative flex gap-x-3">
                         <svg
-                            className="h-6 w-5 text-primary bottom"
+                            className="h-6 w-5 text-primary"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             aria-hidden="true"

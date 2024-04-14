@@ -222,3 +222,63 @@ export async function deleteTask(userId: string, taskId: string){
         .update({tasks: users![0].tasks})
         .eq("id", userId)
 }
+
+//Learn learn ---------------------------------------
+let User:any = initUser()
+
+async function initUser(){
+    const cookieStore = cookies();
+    const supabase = createClient(cookieStore);
+    const { data: { user } } = await supabase.auth.getUser();
+    return user
+}
+
+export async function setUser(newUser: any) {
+    newUser ? User = newUser : User = null
+}
+
+export async function getUser(){
+    return User
+}
+
+export async function getUserData() {
+    const cookieStore = cookies();
+    const supabase = createClient(cookieStore);
+    noStore()
+    const user = await getUser()
+    const {data: accounts, error} = await supabase.from("accounts").select("*").eq("id", user?.id);
+    if (accounts){
+        return accounts
+    } else{
+        console.log(error)
+    }
+}
+
+export async function getWordsetsData(accounts: any){
+    const cookieStore = cookies();
+    const supabase = createClient(cookieStore);
+    noStore()
+    const wordsdata = await Promise.all(
+        accounts![0].wordsets_user.map(async (item: any) => {
+            const {data: wordsets, error} = await supabase
+                .from("wordsets")
+                .select("*")
+                .eq("id", item.id);
+            return wordsets;
+        })
+    );
+    return wordsdata
+}
+
+export async function getWordsetbyId(id: any){
+    const cookieStore = cookies();
+    const supabase = createClient(cookieStore);
+    noStore()
+    if (id){
+        const {data: wordsets, error} = await supabase
+            .from("wordsets")
+            .select("*")
+            .eq("id", id)
+        return wordsets
+    }
+}

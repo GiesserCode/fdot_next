@@ -34,7 +34,7 @@ const Dashboard = async () => {
     const index = users!.findIndex((item: any) => item.id === user.id);
     const data = users![index]
 
-    return <section className={"w-full p-12 relative overflow-x-hidden grid place-items-center"}>
+    return <section className={"w-full p-12 relative overflow-x-hidden grid place-items-center max-lg:p-6"}>
         <div className={`w-full maxW`}>
             <h1 className={`${blackOpsOne.className} antialiased text-4xl mb-5`}>
                 Hallo {data?.name}

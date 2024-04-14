@@ -2,9 +2,8 @@ import {cookies} from "next/headers";
 import {createClient} from "@/utils/supabase/server";
 import {redirect} from "next/navigation";
 import {Metadata} from "next";
-import NoAccess from "@/app/components/dashboard/administration/NoAccess";
-import ManageUsers from "@/app/components/dashboard/administration/ManageUsers";
-import ViewUsers from "@/app/components/dashboard/views/ViewUsers";
+import NoAccess from "@/app/components/dashboard/users/NoAccess";
+import ManageUsers from "@/app/components/dashboard/users/ManageUsers";
 
 export const metadata: Metadata = {
     title: 'Dashboard - Fdot',
@@ -27,7 +26,7 @@ const Users = async () => {
         .from('users')
         .select("*")
 
-    return users?.length && users.length > 1 ? <ViewUsers users={users}/> :<NoAccess/>
+    return users?.length && users.length > 1 ? <ManageUsers content={users}/> :<NoAccess/>
 }
 
 export default Users

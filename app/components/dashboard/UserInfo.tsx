@@ -1,14 +1,13 @@
-import {blackOpsOne} from "@/app/ui/fonts";
 import Link from 'next/link';
 import {LinkSVG, PaperSVG} from "@/app/ui/SVG";
-import Tasks from "@/app/components/dashboard/UserTasks";
+import dynamic from "next/dynamic";
 import {Suspense} from "react";
 import {ClockSkeleton} from "@/app/components/dashboard/Skeletons";
-import dynamic from "next/dynamic";
+import {blackOpsOne} from "@/app/ui/fonts";
+import Tasks from "@/app/components/dashboard/UserTasks";
 
 const Clock = dynamic(() => import ("@/app/components/dashboard/Clock"), { ssr: false })
 const UserInfo = async ({users}: any) => {
-    console.log(users)
 
     return <div className={`w-full grid place-items-center overflow-x-hidden`}>
         <div className={`w-full flex justify-between max-lg:flex-col max-lg:gap-5 mb-5`}>
@@ -22,7 +21,7 @@ const UserInfo = async ({users}: any) => {
             <div className={`w-[30%] grid place-items-center bg-normalBG rounded-xl p-5 max-lg:w-full`}>
                 <div className={`text-center`}>
                     <h2 className={`${blackOpsOne.className} antialiased text-4xl`}>
-                        {users?.hours}
+                        {users.hours}
                     </h2>
                     <p className={`text-secondary`}>Stunden</p>
                 </div>
@@ -47,7 +46,7 @@ function Links({users}: any){
 
 function Notes({users}: any){
     return users.notes && <div className={`w-full text-start my-10 text-2xl text-secondary`}>
-        <textarea className={`text-start no-focus normal-input w-full`} rows={6} disabled={true}>{users.notes}</textarea>
+        <textarea className={`text-start no-focus normal-input w-full max-lg:h-64`} rows={6} disabled={true}>{users.notes}</textarea>
     </div>
 }
 
