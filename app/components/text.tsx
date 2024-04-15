@@ -89,40 +89,57 @@ export const pricing = {
     title: "Preise",
     description:
         "Die Preise können erheblich variieren, abhängig von dem investierten Aufwand.",
-    simple: {
+    pricing: [{
         title: "Simple",
         description:
             "Mit dem Simple angebot erhalten sie eine einfache Webseite für ihr Unternehmen oder Hobby. Zu diesem Angebot kommt dazu, dass ich ihnen kostenfrei zeige, wie sie in Zukunft zugriff auf die Webseite haben.",
         includedTitle: "Das gehört dazu",
         included: [
             "Bis zu 3 Seiten",
-            "Simples Design",
+            "Gute Performance",
             "Optimiert",
             "Personalisiert",
             "Eigene Domain",
-            "Gute Performance",
-        ],
-        priceTitle: "Preis des Simplen Angebots",
-        price: "CHF 1200.-",
-        priceButton: "Kontakt aufnehmen",
-    },
-    advanced: {
-        title: "Advanced",
-        description:
-            "Mit dem Advanced-Angebot erhalten Sie eine maßgeschneiderte Webseite mit erweiterten Funktionen und einem modernen Design für Ihr Unternehmen oder Hobby. Steigern Sie Ihre Online-Präsenz und bringen Sie Ihr Projekt auf das nächste Level.",
-        includedTitle: "Das gehört dazu",
-        included: [
-            "Animationen",
-            "AGB und Datenschutz",
-            "Komplexes Design",
-            "Backend",
-            "Scrollanimation",
-            "Ab 3 Seiten",
+            "Gratis hosting",
         ],
         priceTitle: "Preis wird nach Aufwand berechnet",
-        price: "nach Aufwand",
+        price: "999.-",
         priceButton: "Kontakt aufnehmen",
     },
+        {
+            title: "Wordpress",
+            description:
+                "Mein WordPress-Angebot mit einfachem und kostengünstigem Design ist jetzt verfügbar! Erhalten Sie eine maßgeschneiderte Website für Ihr Unternehmen oder Hobby, die Ihren Bedürfnissen entspricht.",
+            includedTitle: "Das gehört dazu",
+            included: [
+                "mehrere Seiten",
+                "Simples Design",
+                "Eigene Domain",
+                "Personalisiert",
+                "Scrollanimation",
+                "15 CHF/monat hosting",
+            ],
+            priceTitle: "Preis wird nach Aufwand berechnet",
+            price: "800.-",
+            priceButton: "Kontakt aufnehmen",
+        },
+        {
+            title: "Reparatur und Hosting",
+            description:
+                "Sind Sie mit Ihrer Webseite unzufrieden oder zahlen Sie zu viel für Ihr Hosting? Kontaktieren Sie mich und wir schauen uns die Probleme gemeinsam an.",
+            includedTitle: "Das gehört dazu",
+            included: [
+                "Technische Unterstützung",
+                "Änderungen im Design",
+                "Beratung",
+                "Hinzufügen von neuen Seiten",
+                "Problembehebung",
+                "Günstiges Hosting",
+            ],
+            priceTitle: "Beratung Gratis",
+            price: "25.-/h",
+            priceButton: "Kontakt aufnehmen",
+        },]
 };
 
 export const contact = {

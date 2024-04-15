@@ -189,7 +189,7 @@ const Contact = () => {
                     <div className={`w-1/2 flex justify-center`}>
                         <div className={`max-w-[600px] flex flex-col gap-5`}>
                             <h2 className={`${blackOpsOne.className} antialiased text-primary text-6xl text`}>
-                                Lass uns über ihr Projekt sprechen
+                                Lassen Sie uns über Ihr Projekt sprechen
                             </h2>
                             <p className={`text-2xl text-secondary text`}>
                                 Realisieren sie ihre Projekte

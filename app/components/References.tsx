@@ -26,7 +26,7 @@ const References = () => {
                     </div>
                 </div>
             </div>
-            <div className={`relative pr-10 w-[50%] lg:min-w-[420px] max-[1250px]:order-1 max-lg:w-full`}>
+            <div className={`relative lg:pr-10 w-[50%] lg:min-w-[420px] max-[1250px]:order-1 max-lg:w-full`}>
                 <h3 className={`${blackOpsOne.className} antialiased colortitle text text-right max-[1250px]:text-left w-full max-lg:text-lg`}>
                     Projekte
                 </h3>

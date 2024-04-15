@@ -2,8 +2,8 @@ import {cookies} from "next/headers";
 import {createClient} from "@/utils/supabase/server";
 import {redirect} from "next/navigation";
 import {Metadata} from "next";
-import NoAccess from "@/app/components/dashboard/users/NoAccess";
-import ManageUsers from "@/app/components/dashboard/users/ManageUsers";
+import NoAccess from "@/app/components/dashboard/administration/NoAccess";
+import ManageUsers from "@/app/components/dashboard/administration/ManageUsers";
 
 export const metadata: Metadata = {
     title: 'Dashboard - Fdot',
