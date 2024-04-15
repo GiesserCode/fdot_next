@@ -50,7 +50,7 @@ export const ablauf = [
     },
     {
         title: "Startschuss",
-        description: "Sollten Sie sich für mein Angebot entscheiden, beginne ich umgehend mit dem Projekt. Innerhalb von zwei Wochen präsentiere ich Ihnen den ersten Designentwurf Ihrer zukünftigen Webseite. Es wird mir eine Freude sein, all Ihre Anpassungswünsche sorgfältig zu berücksichtigen.",
+        description: "Sollten Sie sich für mein Angebot entscheiden, beginne ich umgehend mit dem Projekt. Nachdem ich Ihnen den ersten Designentwurf Ihrer zukünftigen Webseite präsentiert habe. Wird es mir eine Freude sein, all Ihre Anpassungswünsche sorgfältig zu berücksichtigen.",
     },
     {
         title: "Weblaunch",
@@ -69,7 +69,7 @@ export const ablaufGrafik = [
         style: "col-span-1 row-span-1 row-start-3 col-start-2",
         icon: <PenSVG/>,
         title: "Planung & Design",
-        description: "Erste Designforschläge",
+        description: "Erste Designvorschläge",
     },
     {
         style: "col-span-4 row-span-1 row-start-4 col-start-3",
