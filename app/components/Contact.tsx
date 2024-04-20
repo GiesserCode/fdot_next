@@ -348,35 +348,7 @@ const Contact = () => {
                         </section>
                     </div>
                 </section>
-                <section className="section-horizontally w-min flex items-center">
-                    <form className={`flex gap-5 ${blackOpsOne.className} antialiased`}>
-                        <h2 className={` input-text textScrub`}>Hallo Florian, ich
-                            bin</h2>
-                        {/*<div className={`box-1 w-10 h-10 bg-red-600`}></div>*/}
-                        <div className={`overflow-hidden h-min`}>
-                            <input
-                                type="text"
-                                placeholder="Ihr Name"
-                                className={` input w-[7ch] no-focus boxScrub`}
-                            />
-                        </div>
-                        <h2 className={` input-text textScrub`}>. Du kannst mich
-                            über </h2>
-                        <div className={`overflow-hidden h-min`}>
-                            <input
-                                type="text"
-                                placeholder="Ihr Kontakt"
-                                className={` input w-[9ch] no-focus boxScrub`}
-                            />
-                        </div>
-                        <h2 className={` input-text textScrub`}> erreichen.</h2>
-                        <div className={`overflow-hidden h-min`}>
-                            <textarea placeholder={"Ihre Nachricht"} rows={4}
-                                      className={` textarea no-focus boxScrub`}/>
-                        </div>
-                        <button className={`bg-normalLightBg lg:hover:bg-lightBG w-[300px] center rounded-2xl text-6xl h-[70px] transition duration-500 ease-in-out`}>Senden</button>
-                    </form>
-                </section>
+                <Form/>
             </div>
         </div>
     );
@@ -469,6 +441,7 @@ function Form() {
         const { name, value } = e.target;
         setFilled((prevFilled) => ({ ...prevFilled, [name]: value !== "" }));
         setFilledReal((prevFilledReal) => ({ ...prevFilledReal, [name]: value !== "" }));
+        console.log(JSON.stringify(filled))
     };
 
     const handleSubmit = () => {
