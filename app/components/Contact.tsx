@@ -6,6 +6,7 @@ import Link from "next/link";
 import {blackOpsOne} from "@/app/ui/fonts";
 import {LockSVG, MailSVG} from "@/app/ui/SVG";
 import Split from "split-type";
+import {sendContent} from "@/app/actions";
 
 
 const Contact = () => {
