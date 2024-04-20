@@ -1,7 +1,7 @@
 'use client'
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import Link from "next/link";
 import {blackOpsOne} from "@/app/ui/fonts";
 import {LockSVG, MailSVG} from "@/app/ui/SVG";
