@@ -1,9 +1,20 @@
 'use client'
 import {blackOpsOne} from "@/app/ui/fonts";
-import {ChangeSizeArrowSVG, LockSVG} from "@/app/ui/SVG";
+import {ChangeSizeArrowSVG, FdotSVG, LockSVG} from "@/app/ui/SVG";
+import {useState, useEffect} from "react";
 
 const References = () => {
+    const [iframeLoaded, setIframeLoaded] = useState(false);
 
+    useEffect(() => {
+        // Function to set iframeLoaded to true after a certain delay
+        const delay = setTimeout(() => {
+            setIframeLoaded(true);
+        }, 1000); // Adjust the delay as needed
+
+        // Clear the timeout if component unmounts
+        return () => clearTimeout(delay);
+    }, []);
     return <section className={`w-full overflow-hidden relative grid place-items-center`}>
         <div id={"referenzen"} className={`id`}></div>
         <div className={`w-full p-10 flex justify-between max-[1250px]:flex-wrap max-[1250px]:w-full max-w-[2600px]`}>
@@ -21,12 +32,13 @@ const References = () => {
                         </div>
                     </nav>
                     <div className={`w-full h-full relative`}>
-                        <iframe src="https://www.petosch.com" title={"petosch.com"} className={`w-full h-full zoomed-out-iframe rounded-b-2xl transform scale-80 transform-origin-top-right no-focus`}></iframe>
+                        {iframeLoaded ? <iframe src="https://www.petosch.com" title={"petosch.com"} className={`w-full h-full zoomed-out-iframe rounded-b-2xl transform scale-80 transform-origin-top-right no-focus`}></iframe>
+                        : <div className={`grid place-items-center`}><FdotSVG/>Loading</div>}
                         <button onClick={() => open("https://www.petosch.com")} className={`absolute right-0 bottom-0 cursor-pointer text-2xl rounded-2xl p-2 m-2 text-primary bg-[#d33] font-bold overflow-hidden transition-all duration-500 shadow-lg shadow-zinc-950 lg:hover:bg-primary lg:hover:text-normalBG`}>Besuchen</button>
                     </div>
                 </div>
             </div>
-            <div className={`relative pr-10 w-[50%] lg:min-w-[420px] max-[1250px]:order-1 max-lg:w-full`}>
+            <div className={`relative lg:pr-10 w-[50%] lg:min-w-[420px] max-[1250px]:order-1 max-lg:w-full`}>
                 <h3 className={`${blackOpsOne.className} antialiased colortitle text text-right max-[1250px]:text-left w-full max-lg:text-lg`}>
                     Projekte
                 </h3>

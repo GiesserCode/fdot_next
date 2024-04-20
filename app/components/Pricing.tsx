@@ -62,7 +62,7 @@ function SimpleIncluded({item, index}: any) {
     return (
         <div>
             <h3 className={`text-sm ${blackOpsOne.className} text-primary max-lg:text-primary max-lg:mb-2`}>
-            {item.includedTitle}
+                {item.includedTitle}
             </h3>
             <div className="flex flex-wrap max-lg:text-sm max-sm:flex-col max-sm:w-full">
                 {item.included.map((items: any) => (
@@ -93,11 +93,14 @@ function SimplePrice({item}: any) {
             <h3 className="text-lg text-secondary max-lg:hidden">
                 {item.priceTitle}
             </h3>
+            <h3 className="text-base text-secondary lg:hidden">
+                Preis des Angebots:
+            </h3>
             <h2 className={`${blackOpsOne.className} antialiased text-4xl max-lg:text-xl`}>
                 {item.price}
             </h2>
             <Link href={"#kontakt"}
-                className={`${blackOpsOne.className} antialiased bg-lightBG w-10/12 p-2 rounded-xl text-center max-lg:text-base`}>
+                  className={`${blackOpsOne.className} antialiased bg-lightBG w-10/12 p-2 rounded-xl text-center max-lg:text-base`}>
                 {item.priceButton}
             </Link>
         </div>

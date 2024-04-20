@@ -17,7 +17,7 @@ const About = () => {
                         <div className={`absolute -bottom-[25px] section-Center`}><div className={`w-16 h-[20px] rounded text-xs bg-purple-600 ${onest.className} antialiased grid place-items-center`}>100 x 100</div></div>
                     </div>
                     <div className={`text-6xl ${blackOpsOne.className} antialiased gap-2 border-2 flex border-blue-500 items-center p-2 relative max-lg:text-4xl w-min`}>
-                        <span className={"appearTitle flex whitespace-nowrap gap-5"}>Florian Giesser</span>
+                        <span className={"appearTitle flex whitespace-nowrap gap-5 max-lg:text-3xl"}>Florian Giesser</span>
                         <div className={`blue-square -right-[5px] -top-[5px]`}></div>
                         <div className={`blue-square -left-[5px] -top-[5px]`}></div>
                         <div className={`blue-square -right-[5px] -bottom-[5px]`}></div>

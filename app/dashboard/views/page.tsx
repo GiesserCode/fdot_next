@@ -3,7 +3,7 @@ import {createClient} from "@/utils/supabase/server";
 import {redirect} from "next/navigation";
 import {Metadata} from "next";
 import NoAccess from "@/app/components/dashboard/administration/NoAccess";
-import ViewUsers from "@/app/components/dashboard/views/ViewUser";
+import ViewUsers from "@/app/components/dashboard/views/ViewUsers";
 
 export const metadata: Metadata = {
     title: 'Dashboard - Fdot',
