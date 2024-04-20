@@ -3,9 +3,9 @@ import {BigUserSVG, LockSVG} from "@/app/ui/SVG";
 import {blackOpsOne, onest} from "@/app/ui/fonts";
 
 const About = () => {
-    return <section className={`section-Center `}>
+    return <section className={`section-Center`}>
         <div id={"übermich"} className={`id`}></div>
-        <div className={`flex flex-wrap px-10 justify-between overflow-hidden w-full maxW mb-20`}>
+        <div className={`flex flex-wrap px-10 justify-between overflow-hidden w-full mb-20 maxW`}>
             <div className={`lg:w-[40%] lg:min-w-[700px] selection:bg-purple-500 selection:text-primary left max-[1250px]:mb-5`}>
                 <div className={`flex items-center gap-5 mb-8 max-lg:block`}>
                     <div className={`relative border-2 border-purple-500 max-lg:w-min max-lg:mb-8`}>

@@ -43,7 +43,7 @@ const ContactPage = () => {
                 gsap.to(chars, {
                     scrollTrigger: element,
                     opacity: 1,
-                    stagger: 0.02,
+                    stagger: 0.015,
                     delay: 1,
                     duration: 0.1,
                 });
@@ -402,7 +402,7 @@ function Form() {
                 <p className={`absolute text-lg text-red-600 ${filled.message ? "hidden" : "visible"}`}>Füllen Sie dieses Feld aus</p>
             </div>
             <input type={"submit"} disabled={submitted || Object.values(filledReal).some((value) => !value)}
-                   className={`bg-normalLightBg lg:hover:bg-lightBG w-[300px] center rounded-2xl text-6xl h-[70px] transition duration-500 ease-in-out max-lg:text-2xl max-lg:w-min max-lg:h-min max-lg:p-2 disabled:text-secondary disabled:bg-normalBG disabled:cursor-no-drop`}
+                   className={`bg-normalLightBg lg:hover:bg-lightBG w-[300px] center rounded-2xl text-6xl h-[70px] transition duration-500 ease-in-out max-lg:text-2xl max-lg:w-min max-lg:h-min max-lg:p-2 mr-10 disabled:text-secondary disabled:bg-normalBG disabled:cursor-no-drop`}
                    value={submitted ? "Fertig" : "Senden"}></input>
         </form>
     </section>
