@@ -13,6 +13,7 @@ import References from "@/app/components/References";
 import Contact from "@/app/components/Contact";
 import Offers from "@/app/components/Offers";
 import Footer from "@/app/components/Footer";
+import MobileContact from "@/app/components/MobileContact";
 
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
             <References/>
             <Pricing/>
             <Contact/>
+            <MobileContact />
             <Offers/>
             <Footer />
         </main>

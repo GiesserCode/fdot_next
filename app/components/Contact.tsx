@@ -283,7 +283,7 @@ const Contact = () => {
 
     return (
         <div id={"kontakt"} className="wrapper overflow-x-hidden relative">
-            <div className="flex container">
+            <div className="flex container max-lg:hidden">
                 <section className="section-horizontally w-screen center flex">
                     <div className={`w-1/2 flex justify-center`}>
                         <div className={`max-w-[600px] flex flex-col gap-5`}>
