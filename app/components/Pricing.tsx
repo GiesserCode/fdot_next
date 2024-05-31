@@ -36,11 +36,10 @@ function Simple({item, index} : any) {
         <div className="w-full h-min grid place-items-center my-8 bottom">
             <div className={`maxW rounded-2xl p-[2px] ${index === 0 ? "background-gradient" : "bg-lightBG"}  w-10/12`}>
                 <div className="flex max-lg:items-center max-lg:flex-col overflow-hidden bg-darkBg rounded-2xl">
-                    <div className="text-primary p-4 h-1/2 w-9/12 flex flex-col gap-4 max-lg:w-full">
+                    <div className="text-primary p-4 h-1/2 w-full flex flex-col gap-4 max-lg:w-full">
                         <SimpleTitle item={item}/>
                         <SimpleIncluded item={item} index={index}/>
                     </div>
-                    <SimplePrice item={item}/>
                 </div>
             </div>
         </div>
