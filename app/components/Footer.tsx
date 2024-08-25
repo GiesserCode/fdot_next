@@ -1,8 +1,8 @@
 import {links, navbar} from "@/app/components/text";
 
 const Footer = () => {
-    return <footer className="bg-normalBG rounded-2xl shadow m-4">
-        <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    return <footer className="w-full p-4 ">
+        <div className="w-10/12 mx-auto p-4 md:py-8 self-center maxW bg-normalBG rounded-2xl shadow">
             <div className="sm:flex sm:items-center sm:justify-between">
                 <a href="" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                     <svg

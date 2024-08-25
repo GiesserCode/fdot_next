@@ -62,7 +62,7 @@ const HeroSection = () => {
                     ></div>
                 </div>
                 <div
-                    className={`absolute top-1/2 text-4xl left-1/2 shadow-lg shadow-zinc-900 translate-x-[-180%] translate-y-[40%] bg-zinc-800 w-64 h-24 rounded-[20px] flex justify-center items-center rotate-[30deg] z-20
+                    className={`absolute top-1/2 text-4xl left-1/2 translate-x-[-180%] translate-y-[40%] bg-zinc-800 w-64 h-24 rounded-[20px] flex justify-center items-center rotate-[30deg] z-20
           max-lg:w-24 max-lg:h-12 max-lg:text-xl max-lg:rounded-lg`}
                     style={{
                         transform: `translate(${position.x * 1.2 - 200}%, ${
@@ -73,7 +73,7 @@ const HeroSection = () => {
                     Einfach
                 </div>
                 <div
-                    className={`absolute top-1/2 text-4xl left-1/2 shadow-lg shadow-zinc-900 translate-x-[-10%] translate-y-[160%] bg-neutral-700 w-56 h-28 flex justify-center items-center rotate-[-10deg] z-20
+                    className={`absolute top-1/2 text-4xl left-1/2 translate-x-[-10%] translate-y-[160%] bg-neutral-700 w-56 h-28 flex justify-center items-center rotate-[-10deg] z-20
           max-lg:w-32 max-lg:h-12 max-lg:text-xl max-lg:rounded-lg`}
                     style={{
                         transform: `translate(${position.x * 0.7}%, ${
@@ -96,7 +96,7 @@ const HeroSection = () => {
                     ></div>
                 </div>
                 <div
-                    className={`absolute top-1/2 text-4xl left-1/2 shadow-lg shadow-zinc-900 translate-x-[190%] translate-y-[-20%] bg-neutral-500 rounded-[20px] w-40 h-32 flex justify-center items-center rotate-[10deg] z-20
+                    className={`absolute top-1/2 text-4xl left-1/2 translate-x-[190%] translate-y-[-20%] bg-neutral-500 rounded-[20px] w-40 h-32 flex justify-center items-center rotate-[10deg] z-20
           max-lg:w-16 max-lg:h-16 max-lg:text-xl max-lg:rounded-lg max-lg:hidden`}
                     style={{
                         transform: `translate(${position.x * 1.6 + 200}%, ${

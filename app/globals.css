@@ -86,6 +86,10 @@
     .normal-input{
         @apply bg-transparent text-secondary focus:text-primary w-full
     }
+
+    .button-focus{
+        @apply focus:border focus:border-blueMain
+    }
 }
 
 .text {

@@ -86,9 +86,9 @@ export const ablaufGrafik = [
 ]
 
 export const pricing = {
-    title: "Preise",
+    title: "Kosten",
     description:
-        "Die Preise können erheblich variieren, abhängig von dem investierten Aufwand.",
+        "Die Preise können erheblich variieren, abhängig vom Aufwand.",
     pricing: [{
         title: "Simple",
         description:
@@ -107,9 +107,9 @@ export const pricing = {
         priceButton: "Kontakt aufnehmen",
     },
         {
-            title: "Wordpress",
+            title: "WIX",
             description:
-                "Mein WordPress-Angebot mit einfachem und kostengünstigem Design ist jetzt verfügbar! Erhalten Sie eine maßgeschneiderte Website für Ihr Unternehmen oder Hobby, die Ihren Bedürfnissen entspricht.",
+                "Mein WIX-Angebot mit einfachem und kostengünstigem Design ist jetzt verfügbar! Erhalten Sie eine maßgeschneiderte Website für Ihr Unternehmen oder Hobby, die Ihren Bedürfnissen entspricht.",
             includedTitle: "Das gehört dazu",
             included: [
                 "mehrere Seiten",
@@ -117,7 +117,7 @@ export const pricing = {
                 "Eigene Domain",
                 "Personalisiert",
                 "Scrollanimation",
-                "15 CHF/monat hosting",
+                "12 CHF/monat hosting",
             ],
             priceTitle: "Preis wird nach Aufwand berechnet",
             price: "800.-",

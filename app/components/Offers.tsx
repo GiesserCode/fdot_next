@@ -36,7 +36,7 @@ const Offers = () => {
                             Zusammengebaut
                         </h4>
                         <p className={`text-xl text-secondary max-[1200px]:text-base`}>
-                            Mit WordPress erstellt – unkomplizierte Animationen, schnelle Ladezeiten, mühelose Bearbeitung.
+                            Mit WIX erstellt – unkomplizierte Animationen, schnelle Ladezeiten, mühelose Bearbeitung.
                         </p>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ const Offers = () => {
                         Zusammengebaut
                     </h4>
                     <p className={`text-xl text-secondary max-[1200px]:text-base`}>
-                        Ich erstelle Onlineshops ausschließlich mit benutzerfreundlichen Plattformen wie Shopify, WordPress, Jimdo, usw. Dies ermöglicht Ihnen eine problemlose Anpassung des Shops nach Ihren Wünschen.
+                        Ich erstelle Onlineshops ausschließlich mit benutzerfreundlichen Plattformen wie WIX. Dies ermöglicht Ihnen eine problemlose Anpassung des Shops nach Ihren Wünschen.
                     </p>
                 </div>
             </div>

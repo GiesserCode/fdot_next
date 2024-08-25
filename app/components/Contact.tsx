@@ -1,17 +1,14 @@
 'use client'
-import gsap from 'gsap';
-import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import Link from "next/link";
 import {blackOpsOne} from "@/app/ui/fonts";
 import {LockSVG, MailSVG} from "@/app/ui/SVG";
-import Split from "split-type";
 import {sendContent} from "@/app/actions";
 
 
 const Contact = () => {
 
-    useEffect(() => {
+    /*useEffect(() => {
         let ctx = gsap.context(() => {
             gsap.registerPlugin(ScrollTrigger);
 
@@ -125,18 +122,6 @@ const Contact = () => {
                 },
             });
 
-            /*gsap.to(".box-1", {
-                y: -130,
-                duration: 2,
-                ease: "elastic",
-                scrollTrigger: {
-                    trigger: ".box-1",
-                    containerAnimation: scrollTween,
-                    start: "left center",
-                    toggleActions: "play none none reset",
-                    id: "1",
-                }
-            });*/
 
             const textScrubElements = document.querySelectorAll('.textScrub');
             textScrubElements.forEach((element) => {
@@ -279,11 +264,13 @@ const Contact = () => {
             scrollTrigger: ".shuffeledUp",
             stagger: 0.2,})
         return () => ctx.revert();
-    }, []);
+    }, []);*/
 
+
+    //vor hidden im zweiten div lg: hinzufügen für sichtbarkeit auf grossen bildschirmen
     return (
         <div id={"kontakt"} className="wrapper overflow-x-hidden relative">
-            <div className="flex container max-lg:hidden">
+            <div className="flex container hidden">
                 <section className="section-horizontally w-screen center flex">
                     <div className={`w-1/2 flex justify-center`}>
                         <div className={`max-w-[600px] flex flex-col gap-5`}>
