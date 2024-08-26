@@ -1,13 +1,12 @@
 'use client' // Error components must be Client Components
 
-import {useEffect} from 'react'
 import {FFdotSVG} from "@/app/ui/SVG";
 
 export default function Error({error, reset,}: {
     error: Error & { digest?: string }
     reset: () => void
 }) {
-    useEffect(() => {
+    /*useEffect(() => {
         const logo = document.getElementById('logo');
 
 // Erstelle eine zufällige Animation
@@ -21,7 +20,7 @@ export default function Error({error, reset,}: {
             ease: 'power1.inOut', // Easing-Funktion
         });
         console.error(error)
-    }, [error])
+    }, [error])*/
 
     return (
         <section className={`section-Center h-screen`}>
