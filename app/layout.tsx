@@ -1,21 +1,23 @@
-import {onest} from "@/app/ui/fonts";
-import './globals.css'
-import {Metadata} from "next";
+import { onest } from "@/app/ui/fonts";
+import "./globals.css";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Fdot lassen Sie ihre persönliche Webseite erstellen',
-  description: 'Ihre Webseite, gestaltet nach ihren Wünschen. Lassen Sie uns gemeinsam Ihre Vorstellungen in die Realität umsetzen. Ihre digitale Identität, auf dem neusten Stand der Technologie. Hinterlassen Sie so einen bleibenden Eindruck.',
-}
+  title: "Fdot lassen Sie sich Ihre persönliche Webseite erstellen",
+  description:
+    "Ihre Webseite, gestaltet nach ihren Wünschen. Lassen Sie uns gemeinsam Ihre Vorstellungen in die Realität umsetzen. Ihre digitale Identität, auf dem neusten Stand der Technologie. Hinterlassen Sie so einen bleibenden Eindruck.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-
   return (
     <html lang="en">
-      <body className={`${onest.className} antialiased bg-darkBg text-primary`}>{children}</body>
+      <body className={`${onest.className} antialiased bg-darkBg text-primary`}>
+        {children}
+      </body>
     </html>
-  )
+  );
 }

@@ -147,3 +147,23 @@ export const contact = {
     description:
         "Kontaktieren Sie mich gerne wenn Sie interessiert sind oder noch Fragen haben",
 };
+
+export const references = {
+    references: [
+        {
+            title: "petosch.com",
+            description: "Eine Webseite für Petosch im Lichtenstein",
+            link: "https://petosch.com"
+        },
+        {
+            title: "Sarah Heeb",
+            description: "Ein Onlineshop für Sarah Heeb",
+            link: "https://petosch.com"
+        },
+        {
+            title: "Rheintal-Oberländer Schwingerverband",
+            description: "Eine Webseite für Rheintal-Oberländer Schwingerverband",
+            link: "https://infofdot.wixstudio.io/rosv"
+        }
+    ]
+}
