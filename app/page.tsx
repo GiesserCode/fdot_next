@@ -28,7 +28,6 @@ export default function Home() {
             <About/>
             <References/>
             <Pricing/>
-            <Contact/>
             <Offers/>
             <Footer />
         </main>
