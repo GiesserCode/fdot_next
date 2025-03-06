@@ -62,12 +62,11 @@ function LgForm() {
                 <p className={`absolute text-sm text-red-600 ${filled.message ? "hidden" : "visible"}`}>Füllen Sie
                     dieses Feld aus</p>
             </div>
-            
+            <input type={"submit"} disabled={submitted || Object.values(filledReal).some((value) => !value)}
+                   className={`no-focus bg-primary max-w-sm w-full cursor-pointer self-center text-normalBG ${submitted ? "disabled:bg-green-400 disabled:bg-opacity-40 disabled:text-primary" : "disabled:bg-normalBG disabled:bg-opacity-40 disabled:text-secondary"} rounded-xl p-2 hover:bg-lightBG transition duration-500 ease-in-out disabled:cursor-no-drop`}
+                   value={submitted ? "Daten gesendet!" : "Senden"}></input>
         </form>
     </section>
 }
-/*<input type={"submit"} disabled={submitted || Object.values(filledReal).some((value) => !value)}
-                   className={`no-focus bg-primary max-w-sm w-full cursor-pointer self-center text-normalBG ${submitted ? "disabled:bg-green-400 disabled:bg-opacity-40 disabled:text-primary" : "disabled:bg-normalBG disabled:bg-opacity-40 disabled:text-secondary"} rounded-xl p-2 hover:bg-lightBG transition duration-500 ease-in-out disabled:cursor-no-drop`}
-                   value={submitted ? "Daten gesendet!" : "Senden"}></input>*/
-                   //ganz hinten in form einfügen
+
 export default LgForm

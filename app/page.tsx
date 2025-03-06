@@ -29,7 +29,6 @@ export default function Home() {
             <References/>
             <Pricing/>
             <Contact/>
-            <MobileContact />
             <Offers/>
             <Footer />
         </main>
