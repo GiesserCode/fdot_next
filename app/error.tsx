@@ -1,6 +1,7 @@
 'use client' // Error components must be Client Components
 
 import {FFdotSVG} from "@/app/ui/SVG";
+import { stringify } from "querystring";
 
 export default function Error({error, reset,}: {
     error: Error & { digest?: string }
@@ -32,6 +33,9 @@ export default function Error({error, reset,}: {
                 >
                     Try again
                 </button>
+            </div>
+            <div className="absolute white">
+                {JSON.stringify(error)}
             </div>
         </section>
     )
