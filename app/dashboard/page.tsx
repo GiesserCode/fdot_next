@@ -22,6 +22,7 @@ const Dashboard = async () => {
         return redirect("/login")
     }
 
+
     const {data: contacts, error: contactsError} = await supabase.from('contacts').select("*").order('time', {ascending: false})
     const {data: users, error: usersError} = await supabase.from('users').select("*")
 
@@ -29,6 +30,7 @@ const Dashboard = async () => {
     if (contactsError || usersError){
         console.log(contactsError)
         console.log(usersError)
+        console.log(users)
     }
 
     const index = users!.findIndex((item: any) => item.id === user.id);
