@@ -4,6 +4,7 @@ import {z} from 'zod'
 import {cookies} from 'next/headers'
 import {createClient} from "@/utils/supabase/server";
 import {unstable_noStore as noStore} from 'next/cache';
+import { redirect } from 'next/dist/server/api-utils';
 
 const sendContentSchema = z.object({name: z.string(), contact: z.string(), message: z.string()})
 
@@ -282,3 +283,9 @@ export async function getWordsetbyId(id: any){
         return wordsets
     }
 }
+
+export async function signOut() {
+    const cookieStore = cookies();
+    const supabase = createClient(cookieStore);
+    supabase.auth.signOut();
+  }

@@ -5,6 +5,7 @@ import UserInfo from "@/app/components/dashboard/UserInfo";
 import {Metadata} from "next";
 import {cookies} from "next/headers";
 import {createClient} from "@/utils/supabase/server";
+import Logout from "../components/dashboard/Logout";
 
 export const metadata: Metadata = {
     title: 'Dashboard - Fdot',
@@ -43,6 +44,7 @@ const Dashboard = async () => {
             </h1>
             <UserInfo users={data} />
             <Nachrichten contacts={contacts}/>
+            <Logout/>
         </div>
     </section>
 }
