@@ -35,6 +35,7 @@ const UserInfo = async ({ users }: any) => {
           </div>
         </div>
         <Links users={users} />
+        <FdotLinks users={users} />
       </div>
       <Notes users={users} />
       {users.tasks.length !== 0 && <Tasks users={users} />}
@@ -82,6 +83,34 @@ function Notes({ users }: any) {
         >
           {users.notes}
         </textarea>
+      </div>
+    )
+  );
+}
+
+function FdotLinks({ users }: any) {
+  return (
+    (users.links == true) && (
+      <div
+        className={`w-[30%] flex flex-col justify-between items-center h-full gap-5 max-lg:w-full`}
+      >
+        <div className={`w-full bg-normalBG rounded-xl p-5`}>
+          <Link
+            href={"https://fdot.ch/learn"}
+            className={`w-full cursor-pointer text-xl text-secondary flex items-center gap-2`}
+          >
+            <LinkSVG /> Fdot Learn
+          </Link>
+        </div>
+        <div className={`w-full bg-normalBG rounded-xl p-5`}>
+          <Link
+            href={"https://fdot.ch/habits"}
+            className={`w-full cursor-pointer text-xl text-secondary flex items-center gap-2`}
+          >
+            <LinkSVG />
+            Habits App
+          </Link>
+        </div>
       </div>
     )
   );

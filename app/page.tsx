@@ -1,5 +1,3 @@
-'use client'
-
 import 'splitting/dist/splitting.css';
 import Pricing from "@/app/components/Pricing";
 import Navbar from "@/app/components/Navbar";
@@ -14,11 +12,14 @@ import Contact from "@/app/components/Contact";
 import Offers from "@/app/components/Offers";
 import Footer from "@/app/components/Footer";
 import MobileContact from "@/app/components/MobileContact";
+import Login from './components/Login';
 
 
 export default function Home() {
+
     return (
         <main className={`min-h-min`}>
+            <Login />
             <Navbar/>
             <HeroSection/>
             <Advantages/>

@@ -1,3 +1,5 @@
+'use client'
+
 import {useState} from "react";
 import {blackOpsOne} from "@/app/ui/fonts";
 import {sendContent} from "@/app/actions";
