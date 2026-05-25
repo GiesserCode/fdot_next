@@ -59,11 +59,6 @@ export default function StatsView({ habits, logs, freezes }: Props) {
             type="button"
             className="habit-btn-ghost px-3 py-2 rounded-lg text-sm"
             disabled={pending}
-            onClick={() =>
-              startTransition(() =>
-                useStreakFreeze(todayStr())
-              )
-            }
           >
             ❄️ Streak-Schutz nutzen
           </button>
