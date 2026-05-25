@@ -30,6 +30,9 @@ const Footer = () => {
                             </li>
                         );
                     })}
+                    <li className={`min-w-[48px] min-h-[48px]`}>
+                                <a href={`https://fdot.ch/login`} className="hover:underline min-w-[48px] min-h-[48px] me-4 md:me-6 grid place-items-center">Login</a>
+                            </li>
                 </ul>
             </div>
             <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
