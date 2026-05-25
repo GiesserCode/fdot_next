@@ -1,0 +1,111 @@
+.habits-root {
+  --habit-bg: #0d0d0d;
+  --habit-card: #1a1a1a;
+  --habit-border: #2a2a2a;
+  --habit-text: #f5f5f5;
+  --habit-muted: #888;
+  --habit-accent: #6366f1;
+  background: var(--habit-bg);
+  color: var(--habit-text);
+  font-family: var(--font-habit-sans), system-ui, sans-serif;
+}
+
+.habits-root.habits-light {
+  --habit-bg: #f5f5f5;
+  --habit-card: #ffffff;
+  --habit-border: #e5e5e5;
+  --habit-text: #0d0d0d;
+  --habit-muted: #666;
+}
+
+.habits-mono {
+  font-family: var(--font-habit-mono), monospace;
+}
+
+@keyframes habit-check-pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+.habit-check-animate {
+  animation: habit-check-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes habit-flame-pulse {
+  0%, 100% { filter: brightness(1); transform: scale(1); }
+  50% { filter: brightness(1.2); transform: scale(1.05); }
+}
+
+.habit-flame {
+  animation: habit-flame-pulse 2s ease-in-out infinite;
+}
+
+@keyframes habit-slide-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.habit-slide-in {
+  animation: habit-slide-in 0.3s ease-out;
+}
+
+@keyframes habit-achievement-pop {
+  0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.habit-achievement-toast {
+  animation: habit-achievement-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.habit-card {
+  background: var(--habit-card);
+  border: 1px solid var(--habit-border);
+  border-radius: 12px;
+}
+
+.habit-btn {
+  background: var(--habit-accent);
+  color: white;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.habit-btn:hover {
+  opacity: 0.9;
+}
+
+.habit-btn:active {
+  transform: scale(0.98);
+}
+
+.habit-btn-ghost {
+  background: transparent;
+  border: 1px solid var(--habit-border);
+  color: var(--habit-text);
+}
+
+.habit-input {
+  background: var(--habit-bg);
+  border: 1px solid var(--habit-border);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  color: var(--habit-text);
+  width: 100%;
+}
+
+.habit-input:focus {
+  outline: 2px solid var(--habit-accent);
+  outline-offset: 1px;
+}
+
+.habit-dragging {
+  opacity: 0.5;
+}
+
+.habit-drag-over {
+  border-top: 2px solid var(--habit-accent);
+}
